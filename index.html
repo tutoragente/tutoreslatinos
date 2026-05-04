@@ -1,223 +1,243 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIBET | Automatiza - Vende - Crece</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>SIBET IA</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    body {
-      background: #f5f7fa;
-      color: #1a1a1a;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-    header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+body {
+    background: #f7f9fc;
+    color: #0a2540;
+}
 
-    header img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: white;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+.logo {
+    font-weight: 800;
+    font-size: 22px;
+}
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0a2540;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #22c55e;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.btn {
+    background: linear-gradient(135deg,#0d6efd,#4fc3f7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-    .btn:hover {
-      background: #16a34a;
-    }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 60px;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero-text {
+    max-width: 600px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
+.hero h1 span {
+    color: #0d6efd;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-      color: #1e3a8a;
-    }
+.features {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
 
-    .contact {
-      background: #0f172a;
-      color: white;
-      border-radius: 12px;
-      padding: 40px;
-    }
+.feature {
+    font-size: 14px;
+}
 
-    form {
-      display: grid;
-      gap: 15px;
-      margin-top: 20px;
-    }
+.cta-buttons {
+    margin-top: 20px;
+}
 
-    input, textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-    }
+.btn-green {
+    background: #00c853;
+    margin-right: 10px;
+}
 
-    textarea {
-      resize: none;
-      height: 100px;
-    }
+.hero-img {
+    width: 350px;
+}
 
-    button {
-      background: #22c55e;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+.section {
+    padding: 70px 60px;
+    text-align: center;
+}
 
-    button:hover {
-      background: #16a34a;
-    }
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background: #020617;
-      color: #aaa;
-    }
+.card {
+    background: white;
+    padding: 25px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
 
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 15px 18px;
-      border-radius: 50%;
-      font-size: 20px;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-  </style>
+.blue-section {
+    background: linear-gradient(135deg,#0d6efd,#003c8f);
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.process {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.step {
+    max-width: 180px;
+}
+
+.cta-final {
+    background: #081c3a;
+    color: white;
+    padding: 70px;
+    text-align: center;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+</style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="logo.png" alt="SIBET Logo">
-    <h1>SIBET</h1>
-    <p>Automatiza · Vende · Crece</p>
-    <a href="https://wa.me/51999999999" class="btn">Hablar por WhatsApp</a>
-  </header>
+<header>
+  <img src="logo.png" alt="SIBET Logo">
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Resultados</a>
+    </nav>
+    <a href="#" class="btn">Agendar llamada</a>
+</header>
 
-  <!-- SERVICIOS -->
-  <section>
-    <h2 style="text-align:center; margin-bottom:40px;">Nuestros Servicios</h2>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Consigue clientes todos los días con <span>IA trabajando por ti</span></h1>
+        <p>Automatizamos tu negocio para que vendas sin estar pegado al celular.</p>
 
-    <div class="services">
-      <div class="card">
-        <h3>Automatización con IA</h3>
-        <p>Optimiza procesos con inteligencia artificial y reduce costos operativos.</p>
-      </div>
+        <div class="features">
+            <div class="feature">✔ Responde 24/7</div>
+            <div class="feature">✔ Clientes calificados</div>
+            <div class="feature">✔ Más ventas</div>
+        </div>
 
-      <div class="card">
-        <h3>Chatbots Inteligentes</h3>
-        <p>Atiende clientes 24/7 con respuestas automatizadas y ventas en piloto automático.</p>
-      </div>
-
-      <div class="card">
-        <h3>Marketing Digital</h3>
-        <p>Genera leads y ventas con estrategias digitales enfocadas en resultados.</p>
-      </div>
-
-      <div class="card">
-        <h3>Embudo de Ventas</h3>
-        <p>Convierte visitantes en clientes mediante automatización y seguimiento inteligente.</p>
-      </div>
+        <div class="cta-buttons">
+            <a href="#" class="btn btn-green">Quiero más clientes</a>
+            <a href="#" class="btn">Agendar llamada</a>
+        </div>
     </div>
-  </section>
 
-  <!-- CONTACTO -->
-  <section>
-    <div class="contact">
-      <h2>Contáctanos</h2>
-      <p>Déjanos tus datos y te contactaremos en breve.</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" class="hero-img">
+</section>
 
-      <form onsubmit="sendForm(event)">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo" required>
-        <input type="tel" placeholder="Teléfono">
-        <textarea placeholder="Mensaje"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+<section class="section">
+    <h2>Si te pasa esto, necesitas automatizar</h2>
+    <div class="cards">
+        <div class="card">Respondes mensajes todo el día</div>
+        <div class="card">Pierdes clientes por no responder</div>
+        <div class="card">Dependes de tu tiempo</div>
     </div>
-  </section>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 SIBET - Automatización & Marketing Digital
-  </footer>
+<section class="section">
+    <h2>Lo que hacemos por ti</h2>
+    <div class="cards">
+        <div class="card">Automatizamos respuestas</div>
+        <div class="card">Filtramos clientes</div>
+        <div class="card">Vendemos en automático</div>
+    </div>
+</section>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/51999999999" class="whatsapp">💬</a>
+<section class="blue-section">
+    <h2>Resultados que puedes lograr</h2>
+    <div class="stats">
+        <div>+50%<br>más respuestas</div>
+        <div>+30%<br>más ventas</div>
+        <div>24/7<br>automatización</div>
+    </div>
+</section>
 
-  <!-- SCRIPT -->
-  <script>
-    function sendForm(e) {
-      e.preventDefault();
-      alert("Formulario enviado (modo demo). Conéctalo a un backend o email.");
-    }
-  </script>
+<section class="section">
+    <h2>Proceso simple</h2>
+    <div class="process">
+        <div class="step">Diagnóstico</div>
+        <div class="step">Estrategia</div>
+        <div class="step">Implementación</div>
+        <div class="step">Escalamiento</div>
+    </div>
+</section>
+
+<section class="cta-final">
+    <h2>Deja de perder clientes hoy</h2>
+    <p>Agenda una llamada y te mostramos cómo hacerlo</p>
+    <br>
+    <a href="#" class="btn btn-green">AGENDAR AHORA</a>
+</section>
+
+<div class="whatsapp">💬</div>
 
 </body>
 </html>
