@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIBET | Automatiza - Vende - Crece</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #22c55e;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #16a34a;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    .contact {
+      background: #0f172a;
+      color: white;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background: #22c55e;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #020617;
+      color: #aaa;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50%;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="logo.png" alt="SIBET Logo">
+    <h1>SIBET</h1>
+    <p>Automatiza · Vende · Crece</p>
+    <a href="https://wa.me/51999999999" class="btn">Hablar por WhatsApp</a>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px;">Nuestros Servicios</h2>
+
+    <div class="services">
+      <div class="card">
+        <h3>Automatización con IA</h3>
+        <p>Optimiza procesos con inteligencia artificial y reduce costos operativos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Chatbots Inteligentes</h3>
+        <p>Atiende clientes 24/7 con respuestas automatizadas y ventas en piloto automático.</p>
+      </div>
+
+      <div class="card">
+        <h3>Marketing Digital</h3>
+        <p>Genera leads y ventas con estrategias digitales enfocadas en resultados.</p>
+      </div>
+
+      <div class="card">
+        <h3>Embudo de Ventas</h3>
+        <p>Convierte visitantes en clientes mediante automatización y seguimiento inteligente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section>
+    <div class="contact">
+      <h2>Contáctanos</h2>
+      <p>Déjanos tus datos y te contactaremos en breve.</p>
+
+      <form onsubmit="sendForm(event)">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <input type="tel" placeholder="Teléfono">
+        <textarea placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 SIBET - Automatización & Marketing Digital
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/51999999999" class="whatsapp">💬</a>
+
+  <!-- SCRIPT -->
+  <script>
+    function sendForm(e) {
+      e.preventDefault();
+      alert("Formulario enviado (modo demo). Conéctalo a un backend o email.");
+    }
+  </script>
+
+</body>
+</html>
