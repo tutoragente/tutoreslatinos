@@ -1,189 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBET IA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-
-body{background:#f8fafc;color:#0a2540;}
-
-header{
-display:flex;justify-content:space-between;align-items:center;
-padding:20px 60px;background:#fff;
-}
-
-header img{height:50px;}
-
-nav a{margin:0 15px;text-decoration:none;color:#0a2540;font-weight:500;}
-
-.btn{
-background:linear-gradient(135deg,#0d6efd,#4fc3f7);
-color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;
-font-weight:600;
-}
-
-.hero{
-display:flex;align-items:center;justify-content:space-between;
-padding:80px 60px;flex-wrap:wrap;
-}
-
-.hero-text{max-width:550px;}
-
-.hero h1{font-size:48px;line-height:1.2;}
-
-.hero span{color:#0d6efd;}
-
-.hero p{margin:20px 0;font-size:18px;}
-
-.features{display:flex;gap:20px;margin:20px 0;font-size:14px;}
-
-.btn-green{
-background:#00c853;
-margin-right:10px;
-}
-
-.hero img{
-width:380px;
-}
-
-.section{
-padding:70px 40px;text-align:center;
-}
-
-.cards{
-display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:30px;
-}
-
-.card{
-background:#fff;padding:25px;width:280px;border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.blue{
-background:linear-gradient(135deg,#0d6efd,#003c8f);
-color:#fff;
-padding:60px 20px;text-align:center;
-}
-
-.stats{
-display:flex;justify-content:center;gap:50px;margin-top:30px;flex-wrap:wrap;
-font-size:20px;
-}
-
-.process{
-display:flex;justify-content:center;gap:30px;margin-top:40px;flex-wrap:wrap;
-}
-
-.step{max-width:180px;}
-
-.cta{
-background:#081c3a;color:#fff;padding:70px 20px;text-align:center;
-}
-
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25d366;color:#fff;border-radius:50%;
-width:60px;height:60px;display:flex;align-items:center;justify-content:center;
-font-size:28px;text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-@media(max-width:900px){
-.hero{flex-direction:column;text-align:center;}
-.hero img{margin-top:30px;}
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Control de Finanzas</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, select, button { margin: 5px; padding: 8px; }
+    .ingreso { color: green; }
+    .egreso { color: red; }
+  </style>
 </head>
-
 <body>
 
-<header>
-<img src="logo.png">
-<nav>
-<a href="#">Inicio</a>
-<a href="#">Servicios</a>
-<a href="#">Resultados</a>
-</nav>
-<a href="https://wa.me/51924098028" class="btn">Agendar llamada</a>
-</header>
+<h2>Registro Diario</h2>
 
-<section class="hero">
-<div class="hero-text">
-<h1>Consigue clientes todos los días con <span>IA trabajando por ti</span></h1>
+<select id="tipo">
+  <option value="ingreso">Ingreso</option>
+  <option value="egreso">Egreso</option>
+</select>
 
-<p>Automatizamos tu negocio para que vendas sin estar pegado al celular.</p>
+<input type="number" id="monto" placeholder="Monto">
+<input type="text" id="desc" placeholder="Descripción">
+<button onclick="guardar()">Guardar</button>
 
-<div class="features">
-<div>✔️ Responde 24/7</div>
-<div>✔️ Clientes calificados</div>
-<div>✔️ Más ventas</div>
-</div>
+<h3>Movimientos</h3>
+<ul id="lista"></ul>
 
-<a href="https://wa.me/51924098028" class="btn btn-green">QUIERO MÁS CLIENTES</a>
-<a href="https://wa.me/51924098028" class="btn">AGENDAR LLAMADA</a>
-</div>
+<script>
+let data = JSON.parse(localStorage.getItem("finanzas")) || [];
 
-<img src="logo.png">
-</section>
+function guardar() {
+  let tipo = document.getElementById("tipo").value;
+  let monto = document.getElementById("monto").value;
+  let desc = document.getElementById("desc").value;
 
-<section class="section">
-<h2>SI TE PASA ESTO, NECESITAS AUTOMATIZAR</h2>
+  let movimiento = {
+    tipo,
+    monto,
+    desc,
+    fecha: new Date().toLocaleDateString()
+  };
 
-<div class="cards">
-<div class="card">Respondes mensajes todo el día</div>
-<div class="card">Pierdes clientes por no responder rápido</div>
-<div class="card">Dependes 100% de tu tiempo</div>
-</div>
-</section>
+  data.push(movimiento);
+  localStorage.setItem("finanzas", JSON.stringify(data));
+  mostrar();
+}
 
-<section class="section">
-<h2>LO QUE HACEMOS POR TI</h2>
+function mostrar() {
+  let lista = document.getElementById("lista");
+  lista.innerHTML = "";
 
-<div class="cards">
-<div class="card">Creamos sistemas que responden automáticamente</div>
-<div class="card">Captamos clientes listos para comprar</div>
-<div class="card">Vendemos incluso cuando estás durmiendo</div>
-</div>
-</section>
+  data.forEach(m => {
+    let li = document.createElement("li");
+    li.className = m.tipo;
+    li.textContent = `${m.fecha} - ${m.tipo} - S/ ${m.monto} - ${m.desc}`;
+    lista.appendChild(li);
+  });
+}
 
-<section class="blue">
-<h2>RESULTADOS QUE PUEDES LOGRAR</h2>
-
-<div class="stats">
-<div><strong>+50%</strong><br>más respuestas</div>
-<div><strong>+30%</strong><br>más ventas</div>
-<div><strong>24/7</strong><br>automatización</div>
-</div>
-
-<br>
-<a href="https://wa.me/51924098028" class="btn btn-green">QUIERO ESTOS RESULTADOS</a>
-</section>
-
-<section class="section">
-<h2>PROCESO SIMPLE, RESULTADOS REALES</h2>
-
-<div class="process">
-<div class="step">1. Diagnóstico</div>
-<div class="step">2. Estrategia</div>
-<div class="step">3. Implementación</div>
-<div class="step">4. Escalamiento</div>
-</div>
-</section>
-
-<section class="cta">
-<h2>Deja de perder clientes hoy</h2>
-<p>Agenda una llamada y te mostramos cómo hacerlo</p>
-<br>
-<a href="https://wa.me/51924098028" class="btn btn-green">AGENDAR AHORA</a>
-</section>
-
-<a class="whatsapp" href="https://wa.me/51924098028">💬</a>
+mostrar();
+</script>
 
 </body>
 </html>
