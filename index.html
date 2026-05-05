@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finanzas App</title>
+<title>Finanzas PRO</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
@@ -14,10 +16,10 @@ body {
 }
 
 header {
-  padding: 20px;
+  padding: 15px;
   text-align: center;
-  font-size: 20px;
   background: #1e293b;
+  font-size: 20px;
 }
 
 .container {
@@ -28,7 +30,7 @@ header {
   background: #1e293b;
   padding: 15px;
   border-radius: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 input, select, button {
@@ -45,37 +47,41 @@ button {
   font-weight: bold;
 }
 
+.item {
+  border-bottom: 1px solid #334155;
+  padding: 10px;
+}
+
 .ingreso { color: #22c55e; }
 .egreso { color: #ef4444; }
 
-.lista {
-  margin-top: 15px;
-}
-
-.item {
-  padding: 10px;
-  border-bottom: 1px solid #334155;
-}
-
-.total {
-  font-size: 18px;
-  margin-bottom: 10px;
+canvas {
+  background: white;
+  border-radius: 10px;
 }
 </style>
 
 </head>
 <body>
 
-<header>💰 Mis Finanzas</header>
+<header>📊 Finanzas PRO</header>
 
 <div class="container">
 
 <div class="card">
-<div class="total" id="balance">Balance: S/ 0</div>
+<h3 id="balance">Balance: S/ 0</h3>
 
 <select id="tipo">
   <option value="ingreso">Ingreso</option>
   <option value="egreso">Egreso</option>
+</select>
+
+<select id="categoria">
+  <option>Comida</option>
+  <option>Transporte</option>
+  <option>Trabajo</option>
+  <option>Ocio</option>
+  <option>Otros</option>
 </select>
 
 <input type="number" id="monto" placeholder="Monto">
@@ -84,29 +90,35 @@ button {
 <button onclick="guardar()">Guardar</button>
 </div>
 
-<div class="card lista" id="lista"></div>
+<div class="card">
+<canvas id="grafico"></canvas>
+</div>
+
+<div class="card" id="lista"></div>
 
 </div>
 
 <script>
-let data = JSON.parse(localStorage.getItem("finanzasApp")) || [];
+let data = JSON.parse(localStorage.getItem("finanzasPro")) || [];
 
 function guardar() {
   let tipo = document.getElementById("tipo").value;
+  let categoria = document.getElementById("categoria").value;
   let monto = parseFloat(document.getElementById("monto").value);
   let desc = document.getElementById("desc").value;
 
   if (!monto || !desc) return alert("Completa los datos");
 
-  let movimiento = {
+  let mov = {
     tipo,
+    categoria,
     monto,
     desc,
     fecha: new Date().toLocaleDateString()
   };
 
-  data.push(movimiento);
-  localStorage.setItem("finanzasApp", JSON.stringify(data));
+  data.push(mov);
+  localStorage.setItem("finanzasPro", JSON.stringify(data));
 
   mostrar();
 }
@@ -114,6 +126,7 @@ function guardar() {
 function mostrar() {
   let lista = document.getElementById("lista");
   let balance = 0;
+  let categorias = {};
 
   lista.innerHTML = "";
 
@@ -122,16 +135,40 @@ function mostrar() {
     div.className = "item " + m.tipo;
 
     div.innerHTML = `
-      ${m.fecha} <br>
+      ${m.fecha} - ${m.categoria}<br>
       S/ ${m.monto} - ${m.desc}
     `;
 
     lista.appendChild(div);
 
-    balance += m.tipo === "ingreso" ? m.monto : -m.monto;
+    if (m.tipo === "ingreso") balance += m.monto;
+    else {
+      balance -= m.monto;
+      categorias[m.categoria] = (categorias[m.categoria] || 0) + m.monto;
+    }
   });
 
   document.getElementById("balance").innerText = "Balance: S/ " + balance;
+
+  dibujarGrafico(categorias);
+}
+
+let chart;
+
+function dibujarGrafico(categorias) {
+  let ctx = document.getElementById("grafico");
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: Object.keys(categorias),
+      datasets: [{
+        data: Object.values(categorias)
+      }]
+    }
+  });
 }
 
 mostrar();
