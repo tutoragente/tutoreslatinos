@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Control de Finanzas</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    input, select, button { margin: 5px; padding: 8px; }
-    .ingreso { color: green; }
-    .egreso { color: red; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finanzas App</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  background: #1e293b;
+}
+
+.container {
+  padding: 15px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+}
+
+.ingreso { color: #22c55e; }
+.egreso { color: #ef4444; }
+
+.lista {
+  margin-top: 15px;
+}
+
+.item {
+  padding: 10px;
+  border-bottom: 1px solid #334155;
+}
+
+.total {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+</style>
+
 </head>
 <body>
 
-<h2>Registro Diario</h2>
+<header>💰 Mis Finanzas</header>
+
+<div class="container">
+
+<div class="card">
+<div class="total" id="balance">Balance: S/ 0</div>
 
 <select id="tipo">
   <option value="ingreso">Ingreso</option>
@@ -21,18 +80,23 @@
 
 <input type="number" id="monto" placeholder="Monto">
 <input type="text" id="desc" placeholder="Descripción">
-<button onclick="guardar()">Guardar</button>
 
-<h3>Movimientos</h3>
-<ul id="lista"></ul>
+<button onclick="guardar()">Guardar</button>
+</div>
+
+<div class="card lista" id="lista"></div>
+
+</div>
 
 <script>
-let data = JSON.parse(localStorage.getItem("finanzas")) || [];
+let data = JSON.parse(localStorage.getItem("finanzasApp")) || [];
 
 function guardar() {
   let tipo = document.getElementById("tipo").value;
-  let monto = document.getElementById("monto").value;
+  let monto = parseFloat(document.getElementById("monto").value);
   let desc = document.getElementById("desc").value;
+
+  if (!monto || !desc) return alert("Completa los datos");
 
   let movimiento = {
     tipo,
@@ -42,20 +106,32 @@ function guardar() {
   };
 
   data.push(movimiento);
-  localStorage.setItem("finanzas", JSON.stringify(data));
+  localStorage.setItem("finanzasApp", JSON.stringify(data));
+
   mostrar();
 }
 
 function mostrar() {
   let lista = document.getElementById("lista");
+  let balance = 0;
+
   lista.innerHTML = "";
 
-  data.forEach(m => {
-    let li = document.createElement("li");
-    li.className = m.tipo;
-    li.textContent = `${m.fecha} - ${m.tipo} - S/ ${m.monto} - ${m.desc}`;
-    lista.appendChild(li);
+  data.slice().reverse().forEach(m => {
+    let div = document.createElement("div");
+    div.className = "item " + m.tipo;
+
+    div.innerHTML = `
+      ${m.fecha} <br>
+      S/ ${m.monto} - ${m.desc}
+    `;
+
+    lista.appendChild(div);
+
+    balance += m.tipo === "ingreso" ? m.monto : -m.monto;
   });
+
+  document.getElementById("balance").innerText = "Balance: S/ " + balance;
 }
 
 mostrar();
