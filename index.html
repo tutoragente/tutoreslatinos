@@ -1,189 +1,299 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIBET IA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-
-body{background:#f8fafc;color:#0a2540;}
-
-header{
-display:flex;justify-content:space-between;align-items:center;
-padding:20px 60px;background:#fff;
-}
-
-header img{height:50px;}
-
-nav a{margin:0 15px;text-decoration:none;color:#0a2540;font-weight:500;}
-
-.btn{
-background:linear-gradient(135deg,#0d6efd,#4fc3f7);
-color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;
-font-weight:600;
-}
-
-.hero{
-display:flex;align-items:center;justify-content:space-between;
-padding:80px 60px;flex-wrap:wrap;
-}
-
-.hero-text{max-width:550px;}
-
-.hero h1{font-size:48px;line-height:1.2;}
-
-.hero span{color:#0d6efd;}
-
-.hero p{margin:20px 0;font-size:18px;}
-
-.features{display:flex;gap:20px;margin:20px 0;font-size:14px;}
-
-.btn-green{
-background:#00c853;
-margin-right:10px;
-}
-
-.hero img{
-width:380px;
-}
-
-.section{
-padding:70px 40px;text-align:center;
-}
-
-.cards{
-display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:30px;
-}
-
-.card{
-background:#fff;padding:25px;width:280px;border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.blue{
-background:linear-gradient(135deg,#0d6efd,#003c8f);
-color:#fff;
-padding:60px 20px;text-align:center;
-}
-
-.stats{
-display:flex;justify-content:center;gap:50px;margin-top:30px;flex-wrap:wrap;
-font-size:20px;
-}
-
-.process{
-display:flex;justify-content:center;gap:30px;margin-top:40px;flex-wrap:wrap;
-}
-
-.step{max-width:180px;}
-
-.cta{
-background:#081c3a;color:#fff;padding:70px 20px;text-align:center;
-}
-
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25d366;color:#fff;border-radius:50%;
-width:60px;height:60px;display:flex;align-items:center;justify-content:center;
-font-size:28px;text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-@media(max-width:900px){
-.hero{flex-direction:column;text-align:center;}
-.hero img{margin-top:30px;}
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIBET IA | Automatizacion con inteligencia artificial</title>
+  <meta name="description" content="SIBET IA automatiza procesos de atencion, ventas y marketing para negocios que quieren ahorrar tiempo, responder mas rapido y crecer con procesos inteligentes.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegacion principal">
+      <a class="brand" href="#inicio" aria-label="SIBET IA inicio">
+        <img src="logo.png" width="30%">
+      </a>
+      <div class="nav-links">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="nav-cta" href="#contacto">Diagnostico gratuito</a>
+    </nav>
+  </header>
 
-<header>
-<img src="logo.png">
-<nav>
-<a href="#">Inicio</a>
-<a href="#">Servicios</a>
-<a href="#">Resultados</a>
-</nav>
-<a href="https://wa.me/51924098028" class="btn">Agendar llamada</a>
-</header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-backdrop" aria-hidden="true">
+        <span class="signal signal-one"></span>
+        <span class="signal signal-two"></span>
+        <span class="signal signal-three"></span>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Automatizacion con IA + marketing digital</p>
+        <h1>Automatiza tu negocio con IA y convierte mas oportunidades en clientes</h1>
+        <p class="hero-copy">
+          En SIBET IA disenamos automatizaciones para atencion, ventas, marketing y gestion operativa, adaptadas a profesionales, comercios y empresas que quieren ahorrar tiempo y crecer con procesos mas inteligentes.
+        </p>
+        <div class="hero-actions" aria-label="Acciones principales">
+          <a class="button button-primary" href="#contacto">Agendar diagnostico gratuito</a>
+          <a class="button button-secondary" href="#soluciones">Ver soluciones</a>
+        </div>
+        <div class="hero-metrics" aria-label="Beneficios destacados">
+          <div>
+            <strong>24/7</strong>
+            <span>respuesta automatizada</span>
+          </div>
+          <div>
+            <strong>-40%</strong>
+            <span>tareas manuales repetitivas</span>
+          </div>
+          <div>
+            <strong>+ orden</strong>
+            <span>en ventas, datos y seguimiento</span>
+          </div>
+        </div>
+      </div>
 
-<section class="hero">
-<div class="hero-text">
-<h1>Consigue clientes todos los días con <span>IA trabajando por ti</span></h1>
+      <aside class="automation-panel" aria-label="Vista de automatizacion">
+        <div class="panel-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="workflow">
+          <div class="workflow-item active">
+            <span class="workflow-icon">01</span>
+            <div>
+              <strong>Nuevo lead capturado</strong>
+              <p>Formulario, WhatsApp o redes sociales</p>
+            </div>
+          </div>
+          <div class="connector"></div>
+          <div class="workflow-item">
+            <span class="workflow-icon">02</span>
+            <div>
+              <strong>IA clasifica la consulta</strong>
+              <p>Prioridad, interes y etapa comercial</p>
+            </div>
+          </div>
+          <div class="connector"></div>
+          <div class="workflow-item">
+            <span class="workflow-icon">03</span>
+            <div>
+              <strong>Seguimiento automatico</strong>
+              <p>Mensajes, agenda, CRM y reportes</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <span>Respuesta enviada</span>
+          <strong>2.8 s</strong>
+        </div>
+      </aside>
+    </section>
 
-<p>Automatizamos tu negocio para que vendas sin estar pegado al celular.</p>
+    <section class="section problems" aria-labelledby="problemas-title">
+      <div class="section-heading">
+        <p class="eyebrow">Senales de que necesitas automatizar</p>
+        <h2 id="problemas-title">Cuando el negocio crece, los procesos manuales empiezan a costar oportunidades</h2>
+      </div>
+      <div class="problem-grid">
+        <article>
+          <span>Tiempo</span>
+          <h3>Respuestas tardias</h3>
+          <p>Los clientes potenciales escriben, esperan demasiado y terminan eligiendo otra opcion.</p>
+        </article>
+        <article>
+          <span>Ventas</span>
+          <h3>Seguimiento incompleto</h3>
+          <p>Los prospectos se pierden porque nadie les recuerda, clasifica o acompana a tiempo.</p>
+        </article>
+        <article>
+          <span>Operacion</span>
+          <h3>Tareas repetidas todos los dias</h3>
+          <p>Tu equipo invierte horas copiando datos, enviando mensajes, creando reportes o actualizando hojas.</p>
+        </article>
+        <article>
+          <span>Datos</span>
+          <h3>Informacion dispersa</h3>
+          <p>Ventas, marketing y atencion trabajan en herramientas distintas sin una vision clara.</p>
+        </article>
+        <article>
+          <span>Equipo</span>
+          <h3>Carga operativa alta</h3>
+          <p>Las personas valiosas terminan ocupadas en procesos que un sistema podria ejecutar.</p>
+        </article>
+        <article>
+          <span>Marketing</span>
+          <h3>Campanas sin automatizacion</h3>
+          <p>Las acciones comerciales dependen demasiado de recordatorios manuales y poca medicion.</p>
+        </article>
+      </div>
+    </section>
 
-<div class="features">
-<div>✔️ Responde 24/7</div>
-<div>✔️ Clientes calificados</div>
-<div>✔️ Más ventas</div>
-</div>
+    <section class="section solutions" id="soluciones" aria-labelledby="soluciones-title">
+      <div class="section-heading">
+        <p class="eyebrow">Soluciones SIBET IA</p>
+        <h2 id="soluciones-title">Automatizaciones disenadas para atender, vender y operar mejor</h2>
+        <p>SIBET IA convierte tareas frecuentes en flujos medibles que trabajan junto a tu equipo.</p>
+      </div>
+      <div class="solution-grid">
+        <article class="solution-card">
+          <div class="card-icon">WA</div>
+          <h3>Chatbots para WhatsApp, web y redes</h3>
+          <p>Atiende preguntas frecuentes, filtra solicitudes y deriva conversaciones importantes.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">MK</div>
+          <h3>Campanas automatizadas</h3>
+          <p>Activa secuencias de email, mensajes y recordatorios segun el comportamiento del cliente.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">CRM</div>
+          <h3>Seguimiento automatico de leads</h3>
+          <p>Registra oportunidades, clasifica prospectos y envia alertas comerciales en el momento correcto.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">AG</div>
+          <h3>Agendamiento de citas</h3>
+          <p>Coordina horarios, confirma reservas y reduce ausencias con mensajes automaticos.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">BI</div>
+          <h3>Reportes de ventas y atencion</h3>
+          <p>Obtiene indicadores claros sin depender de consolidaciones manuales al final del dia.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">API</div>
+          <h3>Integracion entre herramientas</h3>
+          <p>Conecta formularios, CRM, hojas de calculo, plataformas internas y canales comerciales.</p>
+        </article>
+        <article class="solution-card featured">
+          <div class="card-icon">IA</div>
+          <h3>Asistentes IA para soporte y gestion</h3>
+          <p>Implementa asistentes internos para consultas, documentos, procesos y apoyo operativo.</p>
+        </article>
+      </div>
+    </section>
 
-<a href="https://wa.me/51924098028" class="btn btn-green">QUIERO MÁS CLIENTES</a>
-<a href="https://wa.me/51924098028" class="btn">AGENDAR LLAMADA</a>
-</div>
+    <section class="section client-types" id="clientes" aria-labelledby="clientes-title">
+      <div class="section-heading">
+        <p class="eyebrow">Para cada etapa de crecimiento</p>
+        <h2 id="clientes-title">Soluciones ajustadas al tamano y ritmo de tu negocio</h2>
+      </div>
+      <div class="client-grid">
+        <article>
+          <h3>Profesionales independientes</h3>
+          <p>Agenda, captacion de leads, respuestas automaticas y seguimiento de prospectos.</p>
+        </article>
+        <article>
+          <h3>Comercios pequenos</h3>
+          <p>WhatsApp, pedidos, reservas, recordatorios, campanas simples y atencion frecuente.</p>
+        </article>
+        <article>
+          <h3>Negocios medianos</h3>
+          <p>CRM, automatizacion comercial, reportes, embudos de venta e integracion entre herramientas.</p>
+        </article>
+        <article>
+          <h3>Empresas grandes</h3>
+          <p>Flujos internos, automatizacion documental, analitica, asistentes internos, seguridad y escalabilidad.</p>
+        </article>
+      </div>
+    </section>
 
-<img src="logo.png">
-</section>
+    <section class="section process" id="proceso" aria-labelledby="proceso-title">
+      <div class="section-heading">
+        <p class="eyebrow">Como trabajamos</p>
+        <h2 id="proceso-title">Un proceso claro para implementar sin desordenar tu operacion</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Diagnostico inicial</h3>
+          <p>Identificamos tareas repetitivas, puntos de perdida y oportunidades de automatizacion.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Diseno del flujo</h3>
+          <p>Mapeamos herramientas, responsables, mensajes, reglas y datos necesarios.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Implementacion</h3>
+          <p>Construimos, conectamos y probamos los flujos en etapas controladas.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Capacitacion</h3>
+          <p>Tu equipo aprende a usar, revisar y aprovechar las automatizaciones.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Optimizacion continua</h3>
+          <p>Medimos resultados y ajustamos el sistema para mejorar conversion y productividad.</p>
+        </article>
+      </div>
+    </section>
 
-<section class="section">
-<h2>SI TE PASA ESTO, NECESITAS AUTOMATIZAR</h2>
+    <section class="results-trust" aria-label="Resultados y confianza">
+      <div class="results">
+        <p class="eyebrow">Resultados esperados</p>
+        <h2>Mas velocidad, mas orden y menos carga manual</h2>
+        <ul>
+          <li>Menos tiempo operativo en tareas repetitivas.</li>
+          <li>Mayor velocidad de respuesta en canales digitales.</li>
+          <li>Mejor seguimiento comercial y menos oportunidades perdidas.</li>
+          <li>Procesos medibles, ordenados y faciles de optimizar.</li>
+          <li>Mayor productividad sin aumentar la carga del equipo.</li>
+        </ul>
+      </div>
+      <div class="trust">
+        <p class="eyebrow">Confianza</p>
+        <h2>Automatizacion con acompanamiento real</h2>
+        <div class="trust-list">
+          <span>Implementacion por etapas</span>
+          <span>Acompanamiento personalizado</span>
+          <span>Capacitacion para el equipo</span>
+          <span>Medicion de resultados</span>
+          <span>Manejo responsable de datos</span>
+          <span>Soluciones segun el tamano del negocio</span>
+        </div>
+      </div>
+    </section>
 
-<div class="cards">
-<div class="card">Respondes mensajes todo el día</div>
-<div class="card">Pierdes clientes por no responder rápido</div>
-<div class="card">Dependes 100% de tu tiempo</div>
-</div>
-</section>
+    <section class="final-cta" id="contacto" aria-labelledby="contacto-title">
+      <div>
+        <p class="eyebrow">Diagnostico gratuito</p>
+        <h2 id="contacto-title">Descubre que procesos de tu negocio puedes automatizar con IA</h2>
+        <p>SIBET IA automatiza procesos de atencion, ventas y marketing para que tu negocio trabaje mas rapido, atienda mejor y convierta mas oportunidades sin aumentar la carga operativa.</p>
+      </div>
+      <form class="contact-form" action="mailto:contacto@sibetia.com" method="post" enctype="text/plain">
+        <label>
+          Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Empresa o negocio
+          <input type="text" name="empresa" placeholder="Nombre del negocio" required>
+        </label>
+        <label>
+          Correo
+          <input type="email" name="correo" placeholder="tu@email.com" required>
+        </label>
+        <label>
+          Que quieres automatizar
+          <textarea name="mensaje" rows="4" placeholder="Cuentanos brevemente tu necesidad"></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Agendar diagnostico gratuito</button>
+      </form>
+    </section>
+  </main>
 
-<section class="section">
-<h2>LO QUE HACEMOS POR TI</h2>
-
-<div class="cards">
-<div class="card">Creamos sistemas que responden automáticamente</div>
-<div class="card">Captamos clientes listos para comprar</div>
-<div class="card">Vendemos incluso cuando estás durmiendo</div>
-</div>
-</section>
-
-<section class="blue">
-<h2>RESULTADOS QUE PUEDES LOGRAR</h2>
-
-<div class="stats">
-<div><strong>+50%</strong><br>más respuestas</div>
-<div><strong>+30%</strong><br>más ventas</div>
-<div><strong>24/7</strong><br>automatización</div>
-</div>
-
-<br>
-<a href="https://wa.me/51924098028" class="btn btn-green">QUIERO ESTOS RESULTADOS</a>
-</section>
-
-<section class="section">
-<h2>PROCESO SIMPLE, RESULTADOS REALES</h2>
-
-<div class="process">
-<div class="step">1. Diagnóstico</div>
-<div class="step">2. Estrategia</div>
-<div class="step">3. Implementación</div>
-<div class="step">4. Escalamiento</div>
-</div>
-</section>
-
-<section class="cta">
-<h2>Deja de perder clientes hoy</h2>
-<p>Agenda una llamada y te mostramos cómo hacerlo</p>
-<br>
-<a href="https://wa.me/51924098028" class="btn btn-green">AGENDAR AHORA</a>
-</section>
-
-<a class="whatsapp" href="https://wa.me/51924098028">💬</a>
-
+  <footer class="footer">
+    <p>SIBET IA. Automatizacion inteligente para negocios que quieren crecer con procesos mas claros.</p>
+    <a href="#inicio">Volver arriba</a>
+  </footer>
 </body>
 </html>
