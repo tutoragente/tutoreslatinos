@@ -1,182 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notas Importantes</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <aside class="sidebar" aria-label="Panel de filtros">
-        <div class="brand">
-          <div class="brand-mark" aria-hidden="true">N</div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIBET IA | Automatización con inteligencia artificial</title>
+  <meta name="descripción" content="SIBET IA automatiza procesos de atención, ventas y marketing para negocios que quieren ahorrar tiempo, responder más rápido y crecer con procesos inteligentes.">
+  <link rel="icon" href="logo_ico.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="SIBET IA inicio">
+        <img src="logo.png" width="40%">
+      </a>
+      <div class="nav-links">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="nav-cta" href="#contacto">Diagnóstico gratuito</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-backdrop" aria-hidden="true">
+        <span class="signal signal-one"></span>
+        <span class="signal signal-two"></span>
+        <span class="signal signal-three"></span>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Automatización con IA + marketing digital</p>
+        <h2>Automatiza tu negocio con IA y convierte más oportunidades en clientes</h2>
+        <p class="hero-copy">
+          En SIBET IA diseñamos automatizaciones para atención, ventas, marketing y gestión operativa, adaptadas a profesionales, comercios y empresas que quieren ahorrar tiempo y crecer con procesos más inteligentes.
+        </p>
+        <div class="hero-actions" aria-label="Acciones principales">
+          <a class="button button-primary" href="#contacto">Agendar diagnóstico gratuito</a>
+          <a class="button button-secondary" href="#soluciones">Ver soluciones</a>
+        </div>
+        <div class="hero-metrics" aria-label="Beneficios destacados">
           <div>
-            <h1>Notas importantes</h1>
-            <p id="note-count">0 notas guardadas</p>
+            <strong>24/7</strong>
+            <span>respuesta automatizada</span>
+          </div>
+          <div>
+            <strong>-40%</strong>
+            <span>tareas manuales repetitivas</span>
+          </div>
+          <div>
+            <strong>+ orden</strong>
+            <span>en ventas, datos y seguimiento</span>
           </div>
         </div>
+      </div>
 
-        <button class="primary-action" id="new-note-btn" type="button">
-          <span aria-hidden="true">+</span>
-          Nueva nota
-        </button>
-
-        <label class="field-label" for="search-input">Buscar</label>
-        <div class="search-box">
-          <span aria-hidden="true">⌕</span>
-          <input id="search-input" type="search" placeholder="Título, descripción o etiqueta" />
+      <aside class="automation-panel" aria-label="Vista de automatización">
+        <div class="panel-top">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-
-        <label class="field-label" for="topic-filter">Tema</label>
-        <select id="topic-filter">
-          <option value="all">Todos los temas</option>
-        </select>
-
-        <label class="field-label" for="tag-filter">Etiqueta</label>
-        <select id="tag-filter">
-          <option value="all">Todas las etiquetas</option>
-        </select>
-
-        <div class="quick-filters" aria-label="Filtros rápidos">
-          <button class="filter-chip active" data-filter="all" type="button">Todas</button>
-          <button class="filter-chip" data-filter="favorite" type="button">Favoritas</button>
-          <button class="filter-chip" data-filter="archived" type="button">Archivadas</button>
-        </div>
-
-        <section class="stats" aria-label="Resumen">
-          <div>
-            <span id="stat-active">0</span>
-            <small>activas</small>
-          </div>
-          <div>
-            <span id="stat-favorite">0</span>
-            <small>favoritas</small>
-          </div>
-          <div>
-            <span id="stat-tags">0</span>
-            <small>etiquetas</small>
-          </div>
-        </section>
-      </aside>
-
-      <main class="main-panel">
-        <section class="list-panel" aria-label="Lista de notas">
-          <div class="section-heading">
+        <div class="workflow">
+          <div class="workflow-item active">
+            <span class="workflow-icon">01</span>
             <div>
-              <span>Biblioteca</span>
-              <strong id="current-filter-label">Todas las notas</strong>
+              <strong>Nuevo lead capturado</strong>
+              <p>Formulario, WhatsApp o redes sociales</p>
             </div>
-            <select id="sort-select" aria-label="Ordenar notas">
-              <option value="updated-desc">Más recientes</option>
-              <option value="created-desc">Fecha de creación</option>
-              <option value="title-asc">Título A-Z</option>
-              <option value="priority-desc">Prioridad</option>
-            </select>
           </div>
-
-          <div id="notes-list" class="notes-list"></div>
-          <div id="empty-state" class="empty-state" hidden>
-            <strong>No hay notas para mostrar</strong>
-            <p>Crea una nota nueva o ajusta tus filtros de búsqueda.</p>
+          <div class="connector"></div>
+          <div class="workflow-item">
+            <span class="workflow-icon">02</span>
+            <div>
+              <strong>IA clasifica la consulta</strong>
+              <p>Prioridad, interés y etapa comercial</p>
+            </div>
           </div>
-        </section>
-
-        <section class="editor-panel" aria-label="Editor de nota">
-          <form id="note-form">
-            <div class="editor-topbar">
-              <div>
-                <span id="form-mode">Nueva nota</span>
-                <strong id="save-status">Lista para guardar</strong>
-              </div>
-              <div class="topbar-actions">
-                <button id="favorite-btn" class="icon-btn" type="button" title="Marcar como favorita" aria-label="Marcar como favorita">☆</button>
-                <button id="archive-btn" class="icon-btn" type="button" title="Archivar" aria-label="Archivar">□</button>
-                <button id="delete-btn" class="danger-btn" type="button">Eliminar</button>
-              </div>
+          <div class="connector"></div>
+          <div class="workflow-item">
+            <span class="workflow-icon">03</span>
+            <div>
+              <strong>Seguimiento automático</strong>
+              <p>Mensajes, agenda, CRM y reportes</p>
             </div>
-
-            <div class="form-grid">
-              <label>
-                <span>Tema</span>
-                <select id="topic-input" required>
-                  <option value="Trabajo">Trabajo</option>
-                  <option value="Estudio">Estudio</option>
-                  <option value="Personal">Personal</option>
-                  <option value="Finanzas">Finanzas</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Ideas">Ideas</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </label>
-
-              <label>
-                <span>Prioridad</span>
-                <select id="priority-input">
-                  <option value="1">Baja</option>
-                  <option value="2">Media</option>
-                  <option value="3">Alta</option>
-                </select>
-              </label>
-
-              <label>
-                <span>Recordatorio</span>
-                <input id="reminder-input" type="datetime-local" />
-              </label>
-            </div>
-
-            <label class="title-field">
-              <span>Título</span>
-              <input id="title-input" type="text" maxlength="120" placeholder="Ej. Puntos clave de la reunión" required />
-            </label>
-
-            <label class="title-field">
-              <span>Etiquetas</span>
-              <input id="tags-input" type="text" placeholder="urgente, clientes, ideas" />
-            </label>
-
-            <div class="editor-block">
-              <div class="toolbar" aria-label="Herramientas de texto enriquecido">
-                <button type="button" data-command="bold" title="Negrita"><strong>B</strong></button>
-                <button type="button" data-command="italic" title="Cursiva"><em>I</em></button>
-                <button type="button" data-command="underline" title="Subrayado"><u>U</u></button>
-                <button type="button" data-command="insertUnorderedList" title="Lista">•</button>
-                <button type="button" data-command="insertOrderedList" title="Lista numerada">1.</button>
-                <button type="button" data-command="formatBlock" data-value="blockquote" title="Cita">❝</button>
-                <button type="button" data-command="createLink" title="Enlace">🔗</button>
-                <button type="button" id="image-btn" title="Agregar imagen">▧</button>
-                <button type="button" data-command="removeFormat" title="Limpiar formato">Tx</button>
-                <input id="image-input" type="file" accept="image/*" hidden />
-              </div>
-
-              <div id="description-editor" class="rich-editor" contenteditable="true" aria-label="Descripción con texto enriquecido"></div>
-            </div>
-
-            <div class="form-actions">
-              <button id="clear-btn" class="secondary-action" type="button">Limpiar</button>
-              <button class="primary-action save-action" type="submit">Guardar nota</button>
-            </div>
-          </form>
-        </section>
-      </main>
-    </div>
-
-    <template id="note-template">
-      <article class="note-card">
-        <div class="note-card-head">
-          <span class="topic-pill"></span>
-          <span class="priority-dot"></span>
+          </div>
         </div>
-        <h2></h2>
-        <p></p>
-        <div class="tag-row"></div>
-        <footer>
-          <span class="date-label"></span>
-          <span class="status-label"></span>
-        </footer>
-      </article>
-    </template>
+        <div class="panel-footer">
+          <span>Respuesta enviada</span>
+          <strong>2.8 s</strong>
+        </div>
+      </aside>
+    </section>
 
-    <script src="app.js"></script>
-  </body>
+    <section class="section problems" aria-labelledby="problemas-title">
+      <div class="section-heading">
+        <p class="eyebrow">Señales de que necesitas automatizar</p>
+        <h2 id="problemas-title">Cuando el negocio crece, los procesos manuales empiezan a costar oportunidades</h2>
+      </div>
+      <div class="problem-grid">
+        <article>
+          <span>Tiempo</span>
+          <h3>Respuestas tardías</h3>
+          <p>Los clientes potenciales escriben, esperan demasiado y terminan eligiendo otra opción.</p>
+        </article>
+        <article>
+          <span>Ventas</span>
+          <h3>Seguimiento incompleto</h3>
+          <p>Los prospectos se pierden porque nadie les recuerda, clasifica o acompaña a tiempo.</p>
+        </article>
+        <article>
+          <span>Operación</span>
+          <h3>Tareas repetidas todos los dias</h3>
+          <p>Tu equipo invierte horas copiando datos, enviando mensajes, creando reportes o actualizando hojas.</p>
+        </article>
+        <article>
+          <span>Datos</span>
+          <h3>Información dispersa</h3>
+          <p>Ventas, marketing y atención trabajan en herramientas distintas sin una visión clara.</p>
+        </article>
+        <article>
+          <span>Equipo</span>
+          <h3>Carga operativa alta</h3>
+          <p>Las personas valiosas terminan ocupadas en procesos que un sistema podría ejecutar.</p>
+        </article>
+        <article>
+          <span>Marketing</span>
+          <h3>Campañas sin automatización</h3>
+          <p>Las acciones comerciales dependen demasiado de recordatorios manuales y poca medición.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section solutions" id="soluciones" aria-labelledby="soluciones-title">
+      <div class="section-heading">
+        <p class="eyebrow">Soluciones SIBET IA</p>
+        <h2 id="soluciones-title">Automatizaciones diseñadas para atender, vender y operar mejor</h2>
+        <p>SIBET IA convierte tareas frecuentes en flujos medibles que trabajan junto a tu equipo.</p>
+      </div>
+      <div class="solution-grid">
+        <article class="solution-card">
+          <div class="card-icon">WA</div>
+          <h3>Chatbots para WhatsApp, web y redes</h3>
+          <p>Atiende preguntas frecuentes, filtra solicitudes y deriva conversaciones importantes.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">MK</div>
+          <h3>Campanas automatizadas</h3>
+          <p>Activa secuencias de email, mensajes y recordatorios según el comportamiento del cliente.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">CRM</div>
+          <h3>Seguimiento automático de leads</h3>
+          <p>Registra oportunidades, clasifica prospectos y envía alertas comerciales en el momento correcto.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">AG</div>
+          <h3>Agendamiento de citas</h3>
+          <p>Coordina horarios, confirma reservas y reduce ausencias con mensajes automáticos.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">BI</div>
+          <h3>Reportes de ventas y atención</h3>
+          <p>Obtiene indicadores claros sin depender de consolidaciones manuales al final del día.</p>
+        </article>
+        <article class="solution-card">
+          <div class="card-icon">API</div>
+          <h3>Integración entre herramientas</h3>
+          <p>Conecta formularios, CRM, hojas de cálculo, plataformas internas y canales comerciales.</p>
+        </article>
+        <article class="solution-card featured">
+          <div class="card-icon">IA</div>
+          <h3>Asistentes IA para soporte y gestión</h3>
+          <p>Implementa asistentes internos para consultas, documentos, procesos y apoyo operativo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section client-types" id="clientes" aria-labelledby="clientes-title">
+      <div class="section-heading">
+        <p class="eyebrow">Para cada etapa de crecimiento</p>
+        <h2 id="clientes-title">Soluciones ajustadas al tamaño y ritmo de tu negocio</h2>
+      </div>
+      <div class="client-grid">
+        <article>
+          <h3>Profesionales independientes</h3>
+          <p>Agenda, captación de leads, respuestas automáticas y seguimiento de prospectos.</p>
+        </article>
+        <article>
+          <h3>Comercios pequeños</h3>
+          <p>WhatsApp, pedidos, reservas, recordatorios, campañas simples y atención frecuente.</p>
+        </article>
+        <article>
+          <h3>Negocios medianos</h3>
+          <p>CRM, automatización comercial, reportes, embudos de venta e integración entre herramientas.</p>
+        </article>
+        <article>
+          <h3>Empresas grandes</h3>
+          <p>Flujos internos, automatización documental, analítica, asistentes internos, seguridad y escalabilidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section process" id="proceso" aria-labelledby="proceso-title">
+      <div class="section-heading">
+        <p class="eyebrow">Como trabajamos</p>
+        <h2 id="proceso-title">Un proceso claro para implementar sin desordenar tu operación</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Diagnóstico inicial</h3>
+          <p>Identificamos tareas repetitivas, puntos de perdida y oportunidades de automatización.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Diseño del flujo</h3>
+          <p>Mapeamos herramientas, responsables, mensajes, reglas y datos necesarios.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Implementación</h3>
+          <p>Construimos, conectamos y probamos los flujos en etapas controladas.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Capacitación</h3>
+          <p>Tu equipo aprende a usar, revisar y aprovechar las automatizaciones.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Optimización continua</h3>
+          <p>Medimos resultados y ajustamos el sistema para mejorar conversión y productividad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="results-trust" aria-label="Resultados y confianza">
+      <div class="results">
+        <p class="eyebrow">Resultados esperados</p>
+        <h2>Más velocidad, más orden y menos carga manual</h2>
+        <ul>
+          <li>Menos tiempo operativo en tareas repetitivas.</li>
+          <li>Mayor velocidad de respuesta en canales digitales.</li>
+          <li>Mejor seguimiento comercial y menos oportunidades perdidas.</li>
+          <li>Procesos medibles, ordenados y fáciles de optimizar.</li>
+          <li>Mayor productividad sin aumentar la carga del equipo.</li>
+        </ul>
+      </div>
+      <div class="trust">
+        <p class="eyebrow">Confianza</p>
+        <h2>Automatización con acompañamiento real</h2>
+        <div class="trust-list">
+          <span>Implementación por etapas</span>
+          <span>Acompañamiento personalizado</span>
+          <span>Capacitación para el equipo</span>
+          <span>Medición de resultados</span>
+          <span>Manejo responsable de datos</span>
+          <span>Soluciones según el tamaño del negocio</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contacto" aria-labelledby="contacto-title">
+      <div>
+        <p class="eyebrow">Diagnóstico gratuito</p>
+        <h2 id="contacto-title">Descubre que procesos de tu negocio puedes automatizar con IA</h2>
+        <p>SIBET IA automatiza procesos de atención, ventas y marketing para que tu negocio trabaje más rápido, atienda mejor y convierta más oportunidades sin aumentar la carga operativa.</p>
+      </div>
+      <form class="contact-form" action="mailto:contacto@sibetia.com" method="post" enctype="text/plain">
+        <label>
+          Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Empresa o negocio
+          <input type="text" name="empresa" placeholder="Nombre del negocio" required>
+        </label>
+        <label>
+          Correo
+          <input type="email" name="correo" placeholder="tu@email.com" required>
+        </label>
+        <label>
+          Qué quieres automatizar
+          <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu necesidad"></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Agendar diagnóstico gratuito</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SIBET IA. Automatización inteligente para negocios que quieren crecer con procesos más claros.</p>
+    <a href="#inicio">Volver arriba</a>
+  </footer>
+</body>
 </html>
