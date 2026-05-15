@@ -270,7 +270,7 @@
         <h2 id="contacto-title">Descubre que procesos de tu negocio puedes automatizar con IA</h2>
         <p>SIBET IA automatiza procesos de atención, ventas y marketing para que tu negocio trabaje más rápido, atienda mejor y convierta más oportunidades sin aumentar la carga operativa.</p>
       </div>
-      <form class="contact-form" action="mailto:tutoreslatinos@gmail.com" method="post" enctype="text/plain">
+      <form class="contact-form" id="contactForm" novalidate>
         <label>
           Nombre
           <input type="text" name="nombre" placeholder="Tu nombre" required>
@@ -287,8 +287,33 @@
           Qué quieres automatizar
           <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu necesidad"></textarea>
         </label>
-        <button class="button button-primary" type="submit">Agendar diagnóstico gratuito</button>
+        <button class="button button-primary" type="submit" id="contactBtn">Agendar diagnóstico gratuito</button>
+        <p id="contactMsg" style="display:none;margin-top:0.75rem;font-weight:600;"></p>
       </form>
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const btn = document.getElementById('contactBtn');
+          const msg = document.getElementById('contactMsg');
+          btn.disabled = true;
+          btn.textContent = 'Enviando…';
+          msg.style.display = 'none';
+          try {
+            const res = await fetch('contact.php', { method: 'POST', body: new FormData(this) });
+            const data = await res.json();
+            msg.textContent = data.message;
+            msg.style.color = data.ok ? '#22c55e' : '#ef4444';
+            msg.style.display = 'block';
+            if (data.ok) this.reset();
+          } catch {
+            msg.textContent = 'Error de conexión. Intenta de nuevo.';
+            msg.style.color = '#ef4444';
+            msg.style.display = 'block';
+          }
+          btn.disabled = false;
+          btn.textContent = 'Agendar diagnóstico gratuito';
+        });
+      </script>
     </section>
   </main>
 
