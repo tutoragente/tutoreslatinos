@@ -22,8 +22,13 @@ if (file_exists($envFile)) {
     }
 }
 
+$smtpHost     = $_ENV['SMTP_HOST']    ?? '';
+$smtpPort     = (int) ($_ENV['SMTP_PORT']    ?? 587);
+$smtpUser     = $_ENV['SMTP_USER']    ?? '';
 $smtpPassword = $_ENV['SMTP_API_KEY'] ?? '';
-if (!$smtpPassword) {
+$toEmail      = $_ENV['SMTP_TO']      ?? '';
+
+if (!$smtpHost || !$smtpUser || !$smtpPassword || !$toEmail) {
     http_response_code(500);
     echo json_encode(['ok' => false, 'message' => 'Configuración de correo incompleta.']);
     exit;
@@ -41,12 +46,7 @@ if (!$nombre || !$empresa || !$correo) {
     exit;
 }
 
-// SMTP settings (Brevo)
-$smtpHost     = 'smtp-relay.brevo.com';
-$smtpPort     = 587;
-$smtpUser     = 'ab5c2e001@smtp-brevo.com';
-$toEmail      = 'tutoreslatinos@gmail.com';
-$subject      = "Nuevo diagnóstico gratuito de $nombre";
+$subject = "Nuevo diagnóstico gratuito de $nombre";
 
 $body = "Nombre: $nombre\r\n"
       . "Empresa: $empresa\r\n"
