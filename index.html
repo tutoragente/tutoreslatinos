@@ -299,7 +299,7 @@
           btn.textContent = 'Enviando…';
           msg.style.display = 'none';
           try {
-            const res = await fetch('/contact.php', { method: 'POST', body: new FormData(this) });
+            const res = await fetch('/api/contact', { method: 'POST', body: new FormData(this) });
             const data = await res.json();
             msg.textContent = data.message;
             msg.style.color = data.ok ? '#22c55e' : '#ef4444';
