@@ -76,7 +76,7 @@ export default async function handler(req, res) {
 
   try {
     const info = await transporter.sendMail({
-      from: `SIBET IA <${process.env.SMTP_FROM}>`,
+      from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
       replyTo: correo.trim(),
       subject: `Nuevo diagnóstico gratuito de ${nombre.trim()}`,
