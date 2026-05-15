@@ -65,14 +65,17 @@ export default async function handler(req, res) {
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),
     secure: false,
+    requireTLS: true,
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_API_KEY,
     },
+    logger: true,
+    debug: true,
   });
 
   try {
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `SIBET IA <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_TO,
       replyTo: correo.trim(),
@@ -80,9 +83,12 @@ export default async function handler(req, res) {
       text: `Nombre: ${nombre.trim()}\nEmpresa: ${empresa.trim()}\nCorreo: ${correo.trim()}\n\nMensaje:\n${mensaje.trim()}`,
     });
 
+    console.log('Email sent. MessageId:', info.messageId, '| Response:', info.response);
     return res.status(200).json({ ok: true, message: '¡Mensaje enviado! Te contactaremos pronto.' });
   } catch (err) {
-    console.error('SMTP error:', err);
-    return res.status(500).json({ ok: false, message: 'Error al enviar el mensaje. Intenta de nuevo.' });
+    console.error('SMTP error code:', err.code);
+    console.error('SMTP error response:', err.response);
+    console.error('SMTP error:', err.message);
+    return res.status(500).json({ ok: false, message: `Error SMTP: ${err.message}` });
   }
 }
