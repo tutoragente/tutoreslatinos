@@ -1,0 +1,50 @@
+<?php
+require_once 'conexion.php';
+header('Content-Type: application/json; charset=utf-8');
+
+$metodo = $_SERVER['REQUEST_METHOD'];
+
+// 1. LEER TODAS LAS TRANSACCIONES DE LA BASE DE DATOS
+if ($metodo === 'GET') {
+    try {
+        $sql = "SELECT t.id, t.fecha_hora, tp.nombre as tipo_pago, e.nombre as entidad, 
+                       t.tipo_flujo, t.monto, t.saldo_ajuste, t.motivo, t.imagen_comprobante
+                FROM transacciones t
+                JOIN tipos_pago tp ON t.tipo_pago_id = tp.id
+                JOIN entidades e ON t.entidad_id = e.id
+                ORDER BY t.fecha_hora DESC";
+        $stmt = $pdo->query($sql);
+        $resultado = $stmt->fetchAll();
+        echo json_encode(["status" => "success", "data" => $resultado]);
+    } catch (PDOException $e) {
+        echo json_encode(["status" => "error", "message" => $e->getMessage()]);
+    }
+}
+
+// 2. INSERTAR NUEVO MOVIMIENTO FINANCIERO (INGRESO / EGRESO)
+if ($metodo === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+    if (!$input) { $input = $_POST; }
+
+    try {
+        $sql = "INSERT INTO transacciones (fecha_hora, tipo_pago_id, entidad_id, tipo_flujo, monto, saldo_ajuste, motivo, imagen_comprobante) 
+                VALUES (:fecha_hora, :tipo_pago_id, :entidad_id, :tipo_flujo, :monto, :saldo_ajuste, :motivo, :imagen_comprobante)";
+        
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':fecha_hora'        => !empty($input['fecha_hora']) ? $input['fecha_hora'] : date('Y-m-d H:i:s'),
+            ':tipo_pago_id'      => $input['tipo_pago_id'],
+            ':entidad_id'        => $input['entidad_id'],
+            ':tipo_flujo'        => $input['tipo_flujo'], // Debe ser 'ingreso' o 'egreso'
+            ':monto'             => $input['monto'],
+            ':saldo_ajuste'      => !empty($input['saldo_ajuste']) ? $input['saldo_ajuste'] : 0.00,
+            ':motivo'            => $input['motivo'] ?? null,
+            ':imagen_comprobante'=> $input['imagen_comprobante'] ?? null
+        ]);
+
+        echo json_encode(["status" => "success", "message" => "Movimiento SIBET registrado correctamente."]);
+    } catch (PDOException $e) {
+        echo json_encode(["status" => "error", "message" => "Error de inserción: " . $e->getMessage()]);
+    }
+}
+?>

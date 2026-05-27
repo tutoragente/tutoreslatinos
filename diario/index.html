@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIBET - Control de Ingresos Diarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>SIBET Ingresos Diarios</h1>
+        <p class="slogan">Gestión Profesional de Caja — Sistema de Flujos Reales</p>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <section class="card form-card">
+            <h2>Registrar Movimiento Financiero</h2>
+            <form id="form-finanzas">
+                
+                <div class="switch-wrapper">
+                    <span class="lbl-egreso">Egreso</span>
+                    <label class="switch">
+                        <input type="checkbox" id="switch-flujo" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="lbl-ingreso">Ingreso</span>
+                </div>
+
+                <div class="grid-2">
+                    <div>
+                        <label for="fecha_hora">Fecha y Hora:</label>
+                        <input type="datetime-local" id="fecha_hora" required>
+                    </div>
+                    <div>
+                        <label for="monto">Monto Operación (S/.):</label>
+                        <input type="number" id="monto" step="0.01" required placeholder="0.00" min="0.01">
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div>
+                        <label for="tipo_pago">Tipo de Pago:</label>
+                        <select id="tipo_pago" required>
+                            <option value="1">Efectivo</option>
+                            <option value="2">Transferencia</option>
+                            <option value="3">Yape</option>
+                            <option value="4">Plin</option>
+                            <option value="5">Deposito</option>
+                            <option value="6">Retiro</option>
+                            <option value="7">Préstamo</option>
+                            <option value="8">Recomendable</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="entidad">Entidad / Destino:</label>
+                        <select id="entidad" required>
+                            <option value="3">Efectivo</option>
+                            <option value="1">BCP</option>
+                            <option value="2">INTERBANK</option>
+                            <option value="4">Clases</option>
+                            <option value="5">Préstamos</option>
+                            <option value="6">Judy</option>
+                            <option value="7">Casa</option>
+                            <option value="8">Diversión</option>
+			    <option value="9">RL</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="saldo_ajuste">Señalar Saldo de Referencia / Ajuste (Opcional):</label>
+                <input type="number" id="saldo_ajuste" step="0.01" placeholder="0.00">
+
+                <label>Motivo (Texto Enriquecido):</label>
+                <div class="editor-toolbar">
+                    <button type="button" onclick="formato('bold')"><b>B</b></button>
+                    <button type="button" onclick="formato('italic')"><i>I</i></button>
+                    <button type="button" onclick="formato('underline')"><u>U</u></button>
+                </div>
+                <div id="editor-motivo" class="rich-editor" contenteditable="true" data-placeholder="Escriba el motivo detallado de la transacción..."></div>
+
+                <label for="imagen_comprobante">Adjuntar Comprobante de Respaldo:</label>
+                <input type="file" id="imagen_comprobante" accept="image/*">
+
+                <button type="submit" class="btn-save">Guardar Movimiento</button>
+            </form>
+        </section>
+
+        <div class="analytics-column">
+            <section class="card balance-card">
+                <h2>Caja y Saldo de Entidades</h2>
+                <label for="combo-visualizacion">Seleccionar Entidad de Consulta:</label>
+                <select id="combo-visualizacion">
+                    <option value="3">Efectivo</option>
+                    <option value="1">BCP</option>
+                    <option value="2">INTERBANK</option>
+                    <option value="4">Clases</option>
+                    <option value="5">Préstamos</option>
+                    <option value="6">Judy</option>
+                    <option value="7">Casa</option>
+                    <option value="8">Diversión</option>
+                </select>
+                <div class="balance-box">
+                    <p>Saldo Neto Real en BD:</p>
+                    <h3 id="txt-saldo-neto">S/. 0.00</h3>
+                </div>
+            </section>
+
+            <section class="card charts-card">
+                <h2>Métricas Analíticas Reales</h2>
+                <div class="charts-container">
+                    <div class="chart-item">
+                        <h4>Proporción del Flujo Interno</h4>
+                        <div class="bar-chart-mock">
+                            <div class="bar-wrapper"><div class="bar bar-in" id="bar-ingreso" style="height: 0%;"></div><span>Ingresos</span></div>
+                            <div class="bar-wrapper"><div class="bar bar-out" id="bar-egreso" style="height: 0%;"></div><span>Egresos</span></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="btn-export-img" class="btn-action">📸 Generar Constancia / Ticket de Pago</button>
+            </section>
+        </div>
+
+    </div>
+
+    <div id="ticket-auditoria" class="ticket-hidden">
+        <h3>SIBET FINANZAS</h3>
+        <p class="ticket-slogan">Comprobante Certificado de Flujo</p>
+        <hr>
+        <p><strong>Tipo de Operación:</strong> <span id="t-flujo">-</span></p>
+        <p><strong>Monto Registrado:</strong> S/. <span id="t-monto">0.00</span></p>
+        <p><strong>Cuenta / Entidad:</strong> <span id="t-entidad">-</span></p>
+        <p><strong>Fecha de Emisión:</strong> <span id="t-fecha">-</span></p>
+        <hr>
+        <p style="font-size: 8pt; text-align: center; color: #555;">Registro Financiero SIBET</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
