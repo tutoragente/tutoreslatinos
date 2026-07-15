@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia SIBET AI | Automatiza, Vende y Crece</title>
+  <meta name="description" content="Potenciando a empresarios de todo tipo para crecer en línea con soluciones inteligentes de AI.">
+  <link rel="icon" href="images/SIBET_IA_logo.ico">
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:title" content="SIBET IA">
+  <meta property="og:description" content="AGENCIA DE AUTOMATIZACIÓN CON IA Y MARKETING DIGITAL. Transformamos tu negocio con Inteligencia Artificial.">
+  <meta property="og:image" content="https://www.sibetweb.com/images/sibet_ws.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.sibetweb.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SIBET IA">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SIBET IA">
+  <meta name="twitter:description" content="AGENCIA DE AUTOMATIZACIÓN CON IA Y MARKETING DIGITAL.">
+  <meta name="twitter:image" content="https://www.sibetweb.com/images/sibet_ws.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-MuZx…(contenido acortado)…" 
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onerror="console.error('Error: No se pudo cargar Font Awesome');"
+  >
+</head>
+<body style="background:#000; color:#fff; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; margin:0;">
+
+<!-- ========== HEADER ========== -->
+<header style="position:fixed; top:0; left:0; right:0; z-index:50; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.85); backdrop-filter:blur(12px);">
+  <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between; height:64px;">
+      <!-- Logo -->
+      <a href="#" style="display:flex; align-items:center; gap:0.625rem; text-decoration:none; font-weight:700; font-size:1.6rem; color:#fff;">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <defs>
+            <linearGradient id="sibet-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+            </linearGradient>
+            <linearGradient id="sibet-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#sibet-grad)" fill-opacity="0.12" stroke="url(#sibet-grad)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#sibet-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+          <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+          <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+          <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+          <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+        </svg>
+        <span style="color:var(--foreground);">Sibet <span style="color:var(--primary);">AI</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav style="display:flex; align-items:center; gap:2rem;" id="desktop-nav">
+        <a href="#services" class="nav-link" style="display:none;" id="dn-services">Servicios</a>
+        <!-- <a href="#pricing" class="nav-link" style="display:none;" id="dn-pricing">Precios</a> -->
+        <a href="#benefits" class="nav-link" style="display:none;" id="dn-benefits">Beneficios</a>
+        <!-- <a href="#testimonials" class="nav-link" style="display:none;" id="dn-testimonials">Testimonios</a>
+        -->
+        <a href="#contact" class="nav-link" style="display:none;" id="dn-contact">Contacto</a>
+        <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Cambiar tema" style="display:none;" title="Cambiar tema">
+          <svg id="icon-moon-d" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg id="icon-sun-d" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <a href="#contact" class="btn-primary" style="display:none; padding:0.5rem 1.25rem; font-size:0.8rem;" id="dn-cta">Comenzar</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button id="menu-toggle" aria-label="Toggle menu" style="background:none; border:none; color:#fff; cursor:pointer; padding:0.5rem; display:flex; align-items:center;">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav" class="mobile-nav" style="border-top:1px solid var(--border);">
+      <nav style="display:flex; flex-direction:column; padding:1rem 0; gap:0.25rem;">
+        <a href="#services" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Servicios</a>
+        <!-- <a href="#pricing" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Precios</a> -->
+        <a href="#benefits" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Beneficios</a>
+        <!-- <a href="#testimonials" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Testimonios</a> -->
+        <a href="#contact" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Contacto</a>
+        <a href="#contact" class="btn-primary mobile-nav-link" style="margin-top:0.75rem; text-align:center;">Comenzar</a>
+        <button id="theme-toggle-mobile" class="theme-toggle" style="margin-top:0.5rem; width:100%; justify-content:center; gap:0.5rem;" aria-label="Cambiar tema">
+          <svg id="icon-moon-m" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg id="icon-sun-m" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span id="theme-label-m">Modo Claro</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section style="position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; padding-top:64px;">
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <div style="max-width:1280px; margin:0 auto; padding:5rem 1.5rem; position:relative; z-index:10; text-align:center; width:100%; box-sizing:border-box;">
+    <!-- Badge -->
+    <div class="section-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594L2.814 12.983a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+      Creamos empresas inteligentes mediante AI y automatización.
+    </div>
+
+    <!-- Headline -->
+    <h1 style="font-size:clamp(2.25rem, 6vw, 4.5rem); font-weight:700; line-height:1.1; letter-spacing:-0.02em; margin:0 auto 1.5rem; max-width:900px; color:#fff;">
+      Transforma tu negocio con</br>
+      <span class="gradient-text">Inteligencia Artificial</span>
+    </h1>
+
+    <!-- Subheading -->
+    <p style="font-size:1.125rem; color:var(--muted-foreground); max-width:640px; margin:0 auto 2.5rem; line-height:1.7;">
+      Desde la consultoría estratégica hasta la implementación completa de soluciones inteligentes, ayudamos a las empresas a automatizar procesos, optimizar recursos y acelerar su crecimiento mediante Inteligencia Artificial.
+    </p>
+
+    <!-- CTAs 
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-bottom:4rem;">
+      <a href="#contact" class="btn-primary" style="font-size:1rem; padding:0.75rem 1.75rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+        Reservar Consultoría de AI
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn-secondary" style="font-size:1rem; padding:0.75rem 1.75rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.195 3.195-1.065a2 2 0 0 1 1.167.094A10 10 0 1 0 3 12a9.96 9.96 0 0 0-.008.342"/></svg>
+        Probar Chat con AI
+      </a>
+    </div>
+    -->
+
+    <!-- Stats -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:2rem; max-width:600px; margin:0 auto;">
+      <div style="text-align:center;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:1.75rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+        </div>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0;">Incremento promedio en rentabilidad</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:1.75rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        </div>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0;">Recupera tiempo valioso cada semana</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.5rem; font-size:1.75rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          24/7
+        </div>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0;">Operaciones con AI</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section id="services" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div class="section-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.121 2.121A.5.5 0 0 1 2.5 21.5V5a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v12z"/></svg>
+        Soluciones impulsadas por AI
+      </div>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">Soluciones de AI para cada negocio</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Descubre nuestra suite integral de servicios impulsados por AI, diseñada para mejorar la productividad, automatizar tareas repetitivas, aumentar las ventas y llevar tu negocio al siguiente nivel.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+
+      <!-- Card 1: AI Automation -->
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+          </div>
+          <div style="font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Automatización Inteligente</div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Haz más con menos esfuerzo.</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Automatizamos tareas repetitivas y procesos operativos para que tu equipo dedique más tiempo a vender, atender clientes y hacer crecer el negocio.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Menos trabajo manual</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Menos errores operativos</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Mayor productividad del equipo</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Procesos más rápidos y eficientes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: AI Chatbots -->
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.121 2.121A.5.5 0 0 1 2.5 21.5V5a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v12z"/></svg>
+          </div>
+          <div style="font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Asistentes Virtuales y Chatbots</div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Atiende clientes las 24 horas sin aumentar personal.</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Implementamos asistentes inteligentes que responden consultas, captan clientes potenciales y brindan soporte en tiempo real desde WhatsApp, web y redes sociales.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Atención inmediata 24/7</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Captación automática de clientes</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Respuestas rápidas y consistentes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3: Predictive Analytics 
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h2"/><path d="M11 11h2"/><path d="M15 6h2"/></svg>
+          </div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Analítica Predictiva</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Toma decisiones basadas en datos con analítica impulsada por AI que predice tendencias e identifica oportunidades de crecimiento.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Pronóstico de Ventas</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Análisis de Mercado</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Evaluación de Riesgos</li>
+          </ul>
+        </div>
+      </div>
+      -->
+
+      <!-- Card 4: Customer Intelligence 
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Inteligencia de Clientes</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Conoce mejor a tus clientes con AI que analiza patrones de comportamiento y predice preferencias.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Análisis de Comportamiento</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Personalización</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Insights de Retención</li>
+          </ul>
+        </div>
+      </div>
+      -->
+
+      <!-- Card 5: Performance Optimization -->
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div style="font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Optimización e intregración de plataformas</div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Toma mejores decisiones con información en tiempo real.</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Utilizamos Inteligencia Artificial para analizar datos, identificar oportunidades de mejora y optimizar continuamente el rendimiento de tu empresa.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Integración con CRMs</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Landing pages</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>E-commerce</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Emailing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 6: AI Security 
+      <div class="service-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; overflow:hidden; position:relative;">
+        <div class="card-overlay" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(0,212,170,0.05) 0%, rgba(74,222,128,0.03) 100%); pointer-events:none;"></div>
+        <div style="padding:1.5rem; position:relative;">
+          <div class="icon-wrap" style="width:3rem; height:3rem; border-radius:0.75rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; transition:background 0.3s;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          </div>
+          <h3 style="font-size:1.125rem; font-weight:600; margin:0 0 0.5rem; color:#fff;">Seguridad con AI</h3>
+          <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Protege tu negocio con soluciones de seguridad impulsadas por AI que detectan y previenen amenazas en tiempo real.</p>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Detección de Amenazas</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Prevención de Fraude</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><span style="width:6px; height:6px; background:var(--primary); border-radius:50%; margin-right:0.75rem; flex-shrink:0;"></span>Protección de Datos</li>
+          </ul>
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+</section>
+
+<section id="slide06" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">AGENTES DE AI</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Cerebros digitales 24/7</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Implementamos empleados virtuales inteligentes que atienden clientes, califican prospectos y cierran ventas mientras duermes.</br> No son chatbots básicos: son agentes entrenados con tu información, tu tono y tus procesos para que cada interacción se sienta humana, pero escale infinitamente.</p>
+          <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">Atención inmediata, lenguaje natural y cero errores</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Chatbots para WhatsApp, web y redes</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Atiende preguntas frecuentes, filtra solicitudes y deriva conversaciones importantes.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-bullhorn"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Campañas automatizadas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Activa secuencias de email, mensajes y recordatorios según el comportamiento del cliente.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Seguimiento automático de prospectos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Registra oportunidades, clasifica prospectos y envía alertas comerciales en el momento correcto.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-regular fa-calendar-check"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Agendamiento de citas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Coordina horarios, confirma reservas y reduce ausencias con mensajes automáticos.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-chart-line"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Reportes de ventas y atención</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Obtiene indicadores claros sin depender de consolidaciones manuales al final del día.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-link"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Integración entre herramientas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Conecta formularios, CRM, hojas de cálculo, plataformas internas y canales comerciales.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== 
+<section id="pricing" style="padding:6rem 1.5rem; background:#0a0a0a;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div class="section-badge">Precios Transparentes</div>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">Elige Tu Camino con AI</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Ya sea que necesites orientación estratégica o implementación completa de AI, tenemos la solución perfecta para transformar tu negocio con automatización inteligente.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:900px; margin:0 auto 4rem;">
+-->
+      <!-- Perfect Start 
+      <div style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:2rem; display:flex; flex-direction:column;">
+        <h3 style="font-size:1.25rem; font-weight:700; color:#fff; margin:0 0 0.25rem;">Inicio Perfecto</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1.25rem;">Consultoría de Estrategia de AI</p>
+        <div style="display:flex; align-items:baseline; gap:0.25rem; margin-bottom:0.25rem;">
+          <span style="font-size:2.5rem; font-weight:700; color:#fff;">$1,000</span>
+          <span style="color:var(--muted-foreground); font-size:0.875rem;">pago único</span>
+        </div>
+        <p style="font-size:0.8rem; color:var(--primary); margin:0 0 1.5rem;">Sesión experta de 45 minutos</p>
+        <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.75rem; flex:1;">
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Sesión de estrategia de AI de 45 minutos</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Evaluación de automatización empresarial</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Creación de hoja de ruta de AI personalizada</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Recomendaciones de stack tecnológico</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Proyecciones de ROI y cronograma</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Guía de prioridades de implementación</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Recursos de seguimiento incluidos</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Sin compromiso requerido</li>
+        </ul>
+        <a href="#contact" class="btn-secondary" style="text-align:center;">Reservar Consultoría</a>
+        <p style="font-size:0.75rem; color:var(--muted-foreground); text-align:center; margin:0.75rem 0 0;">Ideal para negocios que exploran oportunidades con AI</p>
+      </div>
+      -->
+
+      <!-- Full Solution (Featured) 
+      <div style="background:var(--card); border:2px solid var(--primary); border-radius:1rem; padding:2rem; display:flex; flex-direction:column; position:relative;">
+        <div style="position:absolute; top:-1px; left:50%; transform:translateX(-50%);">
+          <span style="display:inline-flex; align-items:center; gap:0.375rem; background:var(--primary); color:var(--primary-foreground); font-size:0.7rem; font-weight:700; padding:0.25rem 0.875rem; border-radius:0 0 0.5rem 0.5rem; text-transform:uppercase; white-space:nowrap;">Más Popular</span>
+        </div>
+        <h3 style="font-size:1.25rem; font-weight:700; color:#fff; margin:0 0 0.25rem;">Solución Completa</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0 0 1.25rem;">Automatización Completa con AI</p>
+        <div style="display:flex; align-items:baseline; gap:0.25rem; margin-bottom:0.25rem;">
+          <span style="font-size:2.5rem; font-weight:700; color:#fff;">$15,000</span>
+          <span style="color:var(--muted-foreground); font-size:0.875rem;">desde</span>
+        </div>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0 0 1.5rem;">Precio personalizado según el alcance</p>
+        <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.75rem; flex:1;">
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Desarrollo de chatbot de AI personalizado</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Flujos de automatización avanzados</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Integración de analítica predictiva</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Sistema de inteligencia de clientes</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Monitoreo de rendimiento en tiempo real</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Despliegue multiplataforma</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Sistema de soporte con AI 24/7</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Optimización de aprendizaje continuo</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Panel de reportes avanzado</li>
+          <li style="display:flex; align-items:flex-start; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;margin-top:1px;"><path d="M20 6 9 17l-5-5"/></svg>Integraciones de API personalizadas</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="text-align:center;">Iniciar Implementación &rarr;</a>
+        <p style="font-size:0.75rem; color:var(--muted-foreground); text-align:center; margin:0.75rem 0 0;">Soluciones de AI de nivel empresarial para negocios en crecimiento</p>
+      </div>
+    </div>
+    -->
+
+    <!-- Recommended Path -->
+    <div style="max-width:680px; margin:0 auto; background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:2rem;">
+      <h3 style="font-size:1.25rem; font-weight:700; text-align:center; margin:0 0 2rem; color:#fff;">Camino recomendado al éxito con SIBET AI</h3>
+      <div style="display:flex; flex-direction:column; gap:1.25rem;">
+        <div style="display:flex; align-items:flex-start; gap:1rem;">
+          <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:var(--primary); color:var(--primary-foreground); display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0; font-size:1rem;">1</div>
+          <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Sesión de Estrategia</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Inicia tu transformación digital con una consultoría especializada donde analizaremos tu negocio, identificaremos oportunidades de automatización y diseñaremos una hoja de ruta clara para implementar Inteligencia Artificial de forma rentable y escalable.</p></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:1rem;">
+          <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:rgba(0,212,170,0.15); border:1px solid var(--primary); color:var(--primary); display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0; font-size:1rem;">2</div>
+          <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Estrategia Diseñada para tu Negocio</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Recibe una propuesta clara con objetivos, beneficios esperados y tiempos de implementación.</p></div>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:1rem;">
+          <div style="width:2.5rem; height:2.5rem; border-radius:50%; background:rgba(0,212,170,0.15); border:1px solid var(--primary); color:var(--primary); display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0; font-size:1rem;">3</div>
+          <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Ponemos la AI a Trabajar por Ti</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Implementamos la solución y nos aseguramos de que empiece a generar resultados reales para tu negocio.</p></div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem;">
+        <a href="#contact" class="btn-primary">Agendar una Asesoría</a>
+        <a href="#contact" class="btn-secondary">Solicitar una Propuesta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BENEFITS ========== -->
+<section id="benefits" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div class="section-badge">Por Qué Elegirnos</div>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">Por qué elegir SIBET AI</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Cada vez más empresas están utilizando nuestras soluciones para reducir costos operativos, mejorar la atención al cliente, automatizar procesos y aumentar su rentabilidad. Tú también puedes formar parte de esta transformación.</p>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Nuestros clientes reducen tareas repetitivas, optimizan procesos y liberan tiempo para enfocarse en lo que realmente genera ingresos.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Incrementamos tu rentabilidad</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Más Ventas, Menos Esfuerzo</h3>
+        <h3 style="font-size:0.75rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Genera más oportunidades de negocio</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Automatizamos la captación y seguimiento de clientes para que tu equipo comercial cierre más ventas sin aumentar su carga de trabajo.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Recupera tiempo valioso cada semana</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Menos tareas repetitivas</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Reduce horas de trabajo manual automatizando cotizaciones, seguimiento de clientes, respuestas y procesos administrativos.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Reducción de Costos</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Reduce Gastos Operativos</h3>
+        <h3 style="font-size:0.75rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Haz más con el mismo equipo</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Optimiza procesos y elimina actividades innecesarias para mejorar la productividad y reducir costos.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Alta tasa de satisfacción</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Clientes Mejor Atendidos</h3>
+        <h3 style="font-size:0.75rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Respuesta rápida y atención continua</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Brinda atención inmediata por WhatsApp, web y redes sociales, incluso fuera del horario de oficina.</p>
+      </div>
+      <!--
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h2"/><path d="M11 11h2"/><path d="M15 6h2"/></svg></div>
+        <div style="font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">85% Mejora en Precisión</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Decisiones Basadas en Datos</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Toma decisiones informadas basadas en insights de AI y analítica predictiva.</p>
+      </div>
+      -->
+      <!--
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="width:4rem; height:4rem; border-radius:1rem; background:rgba(0,212,170,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
+        <div style="font-size:1.25rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">2x Implementación Más Rápida</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Ventaja Competitiva</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Mantente por delante de la competencia con tecnología de AI de vanguardia e innovación constante.</p>
+      </div>
+      -->
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:3rem;">
+      <!--<span class="trust-badge">&#10003; +1000 negocios ya escalando con AI</span> -->
+      <span class="trust-badge">&#10003; Implementación personalizada</span>
+      <span class="trust-badge">&#10003; Capacitación incluida</span>
+      <span class="trust-badge">&#10003; Soporte permanente</span>
+      <span class="trust-badge">&#10003; Escalable para tu empresa</span>
+      <span class="trust-badge">&#10003; Resultados medibles</span>
+      <!--<span class="trust-badge">&#10003; Cumplimiento SOC 2</span> -->
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<!--
+<section id="testimonials" style="padding:6rem 1.5rem; background:#0a0a0a;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div class="section-badge">Historias de Clientes</div>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">Lo Que Dicen Nuestros Clientes</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">No solo tomes nuestra palabra. Mira cómo negocios como el tuyo están logrando resultados notables con nuestras soluciones de AI.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"SIBET AI transformó completamente nuestro servicio al cliente. Pasamos de gestionar 50 consultas al día a 500, con mejores tiempos de respuesta y mayores índices de satisfacción."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1534528741775-53994a69daeb.jpg" alt="Sarah Mitchell" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Sarah Mitchell</div><div style="font-size:0.75rem; color:var(--muted-foreground);">CEO, TechStart Soluciones</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Las herramientas de automatización nos ahorraron 40 horas a la semana. Redirigimos ese tiempo a estrategias de crecimiento y vimos un incremento del 300% en ingresos en 6 meses."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1507003211169-0a1dd7228f2d.jpg" alt="Michael Chen" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Michael Chen</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Fundador, E-commerce Plus</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"La analítica predictiva nos ayudó a identificar nuevas oportunidades de mercado que nunca habríamos descubierto. Nuestras tasas de conversión mejoraron un 85%."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1438761681033-6461ffad8d80.jpg" alt="Emily Rodriguez" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Emily Rodriguez</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Directora de Marketing, GrowthCo</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"La implementación fue perfecta y el ROI fue inmediato. Las soluciones de AI se pagaron solas en el primer mes solo con los ahorros en costos."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1500648767791-00dcc994a43e.jpg" alt="David Thompson" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">David Thompson</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Gerente de Operaciones, LogiFlow</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Como pequeño negocio, pensé que la AI estaba fuera de mi alcance. SIBET AI la hizo accesible y asequible. Ahora compito con empresas mucho más grandes."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1472099645785-5658abf4ff4e.jpg" alt="Lisa Park" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Lisa Park</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Propietaria de Pequeño Negocio</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Las funciones de seguridad nos dan tranquilidad. Podemos enfocarnos en la innovación sabiendo que nuestros datos y clientes están protegidos por AI de vanguardia."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1438761681033-6461ffad8d80.jpg" alt="James Wilson" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">James Wilson</div><div style="font-size:0.75rem; color:var(--muted-foreground);">CTO, InnovateLab</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+
+        <!-- Left column -->
+        <div>
+          <div class="section-badge">Comenzar</div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿Listo para hacer crecer tu empresa con AI?</h2>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Implementamos asistentes virtuales, agentes de AI, automatizaciones empresariales, sistemas inteligentes, CRM, ERP y herramientas de marketing automatizado que trabajan por tu empresa las 24 horas del día.</br>Mientras tu equipo se enfoca en vender y crecer, la inteligencia artificial se encarga de las tareas repetitivas, la atención al cliente y el seguimiento de oportunidades de negocio.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.875rem;">
+            <!--
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Consultoría experta de estrategia de AI ($1,000)</li>
+            -->
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Diagnóstico y plan de mejora para tu empresa</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Sesión estratégica para identificar oportunidades de ahorro y crecimiento</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Acompañamiento durante todo el proceso de implementación</li>
+          </ul>
+          <div style="background:rgba(0,212,170,0.08); border:1px solid rgba(0,212,170,0.2); border-radius:0.75rem; padding:1rem;">
+            <p style="font-size:0.8rem; color:var(--primary); margin:0; font-weight:500;">&#9888; Reserva tu consultoría y descubre qué procesos puedes automatizar para reducir costos y mejorar resultados.</p>
+          </div>
+        </div>
+
+        <!-- Right column: Form -->
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:2rem;">
+          <h3 style="font-size:1.125rem; font-weight:700; color:#fff; margin:0 0 1.5rem;">Conversemos sobre cómo optimizar tu negocio</h3>
+          <form id="contact-form" style="display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+              <input type="text" name="name" placeholder="Nombre Completo" required class="input-field">
+              <input type="email" name="email" placeholder="Correo Electrónico" required class="input-field">
+            </div>
+            <input type="text" name="company" placeholder="Nombre de la Empresa" required class="input-field">
+            <select name="size" class="input-field">
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="asesoria">Agendar una asesoría</option>
+              <option value="propuesta">Solicitar una Propuesta</option>
+              <option value="otros">Otros</option>
+            </select>
+            <textarea name="message" placeholder="¿Qué procesos te gustaría mejorar o automatizar en tu empresa?" rows="4" class="input-field" style="resize:vertical;"></textarea>
+            <button type="submit" class="btn-primary" style="width:100%; padding:0.875rem; font-size:1rem; justify-content:center;">
+              Enviar &rarr;
+            </button>
+            <p style="font-size:0.75rem; color:var(--muted-foreground); text-align:center; margin:0;">Al enviar este formulario, aceptas nuestra política de privacidad y términos de servicio.</p>
+          </form>
+          <div id="form-success" style="display:none; text-align:center; padding:3rem 1rem;">
+            <div style="font-size:3rem; color:var(--primary); margin-bottom:1rem;">&#10003;</div>
+            <h3 style="font-size:1.25rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">¡Consultoría Reservada!</h3>
+            <p style="color:var(--muted-foreground); margin:0;">Nos pondremos en contacto en menos de 24 horas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:#050505; border-top:1px solid var(--border); padding:4rem 1.5rem 2rem;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:3rem; margin-bottom:3rem;">
+
+      <!-- Brand -->
+      <div style="grid-column: span 1;">
+        <a href="#" style="display:inline-flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; font-weight:700; margin-bottom:1rem;">
+          <svg width="96" height="96" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <defs>
+              <linearGradient id="footer-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+              </linearGradient>
+              <linearGradient id="footer-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#footer-grad)" fill-opacity="0.12" stroke="url(#footer-grad)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#footer-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+            <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+            <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+            <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+            <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+          </svg>
+          <span style="color:var(--foreground); font-size:2.6rem; font-weight:700;">Sibet <span style="color:var(--primary);">AI</span></span>
+        </a>
+                  <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
+            <a href="mailto:tutoreslatinos@gmail.com" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>tutoreslatinos@gmail.com</a>
+            <a href="tel: 924098028" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l2.226-2.908a.5.5 0 0 1 .7-.1l3.357 2.307a1 1 0 0 1 .23 1.355l-1.723 2.428a2 2 0 0 1-2.034.779 15.995 15.995 0 0 1-9.37-5.604 15.995 15.995 0 0 1-3.51-10.18 2 2 0 0 1 1.131-1.702l2.757-1.227a1 1 0 0 1 1.3.47l1.445 3.199a.5.5 0 0 1-.152.618l-2.57 2.062a1 1 0 0 0-.2 1.353 13.3 13.3 0 0 0 3.17 3.52"/></svg>+51 (1) 924098028</a>
+            <span style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Atención para empresas de todo el Perú</span>
+          </div>
+        <div style="display:flex; gap:0.75rem;">
+          <a href="#" aria-label="Facebook" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 1rem; font-size:0.875rem;">Servicios</h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Consultoría de Estrategia de AI</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Chatbots con AI</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Automatización Empresarial</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Analítica Predictiva</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Inteligencia de Clientes</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Optimización del Rendimiento</a></li>
+        </ul>
+      </div>
+      -->
+      <!-- Company -->
+      <!-- 
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 1rem; font-size:0.875rem;">Empresa</h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Nosotros</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Empleos</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Blog</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Casos de Éxito</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Prensa</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Socios</a></li>
+        </ul>
+      </div>
+      -->
+
+      <!-- Newsletter -->
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 0.5rem; font-size:0.875rem;">Mantente al día con las oportunidades que la AI puede generar para tu empresa</h4>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Recibe información práctica, tendencias y estrategias para optimizar operaciones, mejorar la experiencia del cliente y aumentar la productividad.</p>
+        <form onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:var(--primary);font-size:0.875rem;\'>¡Gracias por suscribirte!</p>';" style="display:flex; gap:0.5rem;">
+          <input type="email" placeholder="Tu correo" class="input-field" style="flex:1; padding:0.625rem 0.875rem;">
+          <button type="submit" class="btn-primary" style="padding:0.625rem 1rem; white-space:nowrap; font-size:0.8rem;">Suscribirse</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top:1px solid var(--border); padding-top:2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+      <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0;">&copy; SIBET AI © 2024 | AUTOMATIZA - VENDE - CRECE. Todos los derechos reservados.</p>
+<!--
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Política de Privacidad</a>
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Términos de Servicio</a>
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Política de Cookies</a>
+      </div>
+    -->
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script src="js/main.js"></script>
+
+<!-- ========== CHATBASE WIDGET ========== -->
+<script>
+  window.embeddedChatbotConfig = {
+    chatbotId: "oZ45UZzhlmbvV8AvULTrO",
+    domain: "www.chatbase.co"
+  }
+</script>
+<script
+  src="https://www.chatbase.co/embed.min.js"
+  chatbotId="oZ45UZzhlmbvV8AvULTrO"
+  domain="www.chatbase.co"
+  defer>
+</script>
+
+</body>
+</html>

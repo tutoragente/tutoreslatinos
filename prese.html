@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia SIBET AI | Automatiza, Vende y Crece</title>
+  <meta name="description" content="Potenciando a empresarios de todo tipo para crecer en línea con soluciones inteligentes de AI.">
+  <link rel="icon" href="images/SIBET_IA_logo.ico">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-MuZx…(contenido acortado)…" 
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onerror="console.error('Error: No se pudo cargar Font Awesome');"
+  >
+</head>
+<body style="background:#000; color:#fff; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; margin:0;">
+
+<!-- ========== HEADER ========== -->
+<header style="position:fixed; top:0; left:0; right:0; z-index:50; border-bottom:1px solid var(--border); background:rgba(0,0,0,0.85); backdrop-filter:blur(12px);">
+  <div style="max-width:1280px; margin:0 auto; padding:0 1.5rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between; height:64px;">
+      <!-- Logo -->
+      <a href="#" style="display:flex; align-items:center; gap:0.625rem; text-decoration:none; font-weight:700; font-size:1.6rem; color:#fff;">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <defs>
+            <linearGradient id="sibet-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+            </linearGradient>
+            <linearGradient id="sibet-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#sibet-grad)" fill-opacity="0.12" stroke="url(#sibet-grad)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#sibet-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+          <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+          <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+          <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+          <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+        </svg>
+        <span style="color:var(--foreground);">Sibet <span style="color:var(--primary);">AI</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav style="display:flex; align-items:center; gap:2rem;" id="desktop-nav">
+        <a href="#services" class="nav-link" style="display:none;" id="dn-services">Servicios</a>
+        <!-- <a href="#pricing" class="nav-link" style="display:none;" id="dn-pricing">Precios</a> -->
+        <a href="#benefits" class="nav-link" style="display:none;" id="dn-benefits">Beneficios</a>
+        <!-- <a href="#testimonials" class="nav-link" style="display:none;" id="dn-testimonials">Testimonios</a>
+        -->
+        <a href="#contact" class="nav-link" style="display:none;" id="dn-contact">Contacto</a>
+        <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Cambiar tema" style="display:none;" title="Cambiar tema">
+          <svg id="icon-moon-d" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg id="icon-sun-d" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <a href="#contact" class="btn-primary" style="display:none; padding:0.5rem 1.25rem; font-size:0.8rem;" id="dn-cta">Comenzar</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button id="menu-toggle" aria-label="Toggle menu" style="background:none; border:none; color:#fff; cursor:pointer; padding:0.5rem; display:flex; align-items:center;">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav" class="mobile-nav" style="border-top:1px solid var(--border);">
+      <nav style="display:flex; flex-direction:column; padding:1rem 0; gap:0.25rem;">
+        <a href="#services" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Servicios</a>
+        <!-- <a href="#pricing" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Precios</a> -->
+        <a href="#benefits" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Beneficios</a>
+        <!-- <a href="#testimonials" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Testimonios</a> -->
+        <a href="#contact" class="mobile-nav-link" style="padding:0.625rem 0; color:var(--muted-foreground); text-decoration:none; font-size:0.875rem; transition:color 0.2s;">Contacto</a>
+        <a href="#contact" class="btn-primary mobile-nav-link" style="margin-top:0.75rem; text-align:center;">Comenzar</a>
+        <button id="theme-toggle-mobile" class="theme-toggle" style="margin-top:0.5rem; width:100%; justify-content:center; gap:0.5rem;" aria-label="Cambiar tema">
+          <svg id="icon-moon-m" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg id="icon-sun-m" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <span id="theme-label-m">Modo Claro</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
+<!-- ========== DIAPOSITIVAS ========== -->
+<section id="slide01" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div style="grid-column: span 1;">
+        <a href="#" style="display:inline-flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; font-weight:700; margin-bottom:1rem;">
+          <svg width="96" height="96" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <defs>
+              <linearGradient id="footer-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+              </linearGradient>
+              <linearGradient id="footer-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#footer-grad)" fill-opacity="0.12" stroke="url(#footer-grad)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#footer-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+            <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+            <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+            <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+            <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+          </svg>
+          <span style="color:var(--foreground); font-size:2.6rem; font-weight:700;">SIBET <span style="color:var(--primary);">AI</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">AGENCIA DE AUTOMATIZACIÓN CON AI & MARKETING DIGITAL</h2>
+      <h2 style="font-size:clamp(1.05rem, 2.4vw, 1.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">AUTOMATIZACIÓN INTELIGENTE PARA NEGOCIOS QUE QUIEREN CRECER</h2>
+      <div class="section-badge">sibetweb.com | ventas@sibetweb.com</div></br>
+      <a href="#oportunidad" class="btn-primary">TU OPORTUNIDAD SISTEMA DE AFLIADOS</a>
+    </div>
+  </div>
+</section>
+<section id="slide02" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">LA REVOLUCIÓN DIGITAL</h2>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Estamos en la Cuarta Revolución Industrial. Las empresas que no implementen Inteligencia Artificial en los próximos 3 años corren el riesgo de desaparecer</p>
+        </div>
+        <div>
+          <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.875rem;">
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><div class="section-badge"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div><div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Demanda de Inteligencia Artificial crece +300% Anual</div>
+            </li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><div class="section-badge"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">80% de Pymes necesitan automatización urgente</div></li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><div class="section-badge"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Un mercado de trillones de dólares disponible</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide03" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">    
+    <div style="text-align:center; margin-bottom:4rem;">      
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿QUIÉNES SOMOS?</h2>
+      <div class="section-badge">El equipo detras de tu crecimiento</div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);"><i class="fa-solid fa-bridge"></i></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">El Puente</div>        
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Conectamos el Futuro con tu Negocio</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Traducimos la inteligencia artificial de moda en herramientas prácticas que escalan tu operación sin que tengas que convertirte en experto tecnológico.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);"><i class="fa-solid fa-robot"></i></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Expertos en Inteligencia Artificial</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Automatizamos para que Crezcas</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Eliminamos el trabajo manual que te roba horas. Tú te enfocas en cerrar ventas y expandir tu marca; nosotros nos encargamos de que los sistemas corran solos 24/7.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);"><i class="fa-solid fa-globe"></i></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Impacto Global</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Te hacemos participe de la Tecnología de Élite</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">El software que antes solo podían pagar las grandes corporaciones ahora está al alcance de emprendedores, profesionales independientes, comercios locales y empresas en crecimiento.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);"><i class="fa-solid fa-check"></i></div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Resultados Medibles</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">KPI - Indicador Clave de Rendimiento</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Cada automatización que implementamos tiene un KPI asociado. Si no mejora tu eficiencia o tus ingresos, lo ajustamos hasta que lo haga.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide04" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">SEÑALES DE QUE NECESITAS AUTOMATIZAR</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Si reconoces 2 de estas 6, cada día que esperas te cuesta dinero</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">La mayoría de negocios no fracasan por falta de talento. Fracasan porque el talento se gasta en tareas que una máquina podría hacer mejor, más rápido y sin descanso. Estas son las señales de alarma que indican que tu operación está frenando tu crecimiento.</p>
+          <!-- <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">Si una o más de estas señales te son familiares, no es que necesites trabajar más. Necesitas que el sistema trabaje por ti.</h2> -->
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Tiempo — Respuestas tardías</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Los clientes potenciales escriben, esperan demasiado y terminan eligiendo otra opción.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Ventas — Seguimiento incompleto</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Los prospectos se pierden porque nadie les recuerda, clasifica o acompaña a tiempo.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Operación — Tareas repetidas todos los dias</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Tu equipo invierte horas copiando datos, enviando mensajes, creando reportes o actualizando hojas.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Datos — Información dispersa</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Ventas, marketing y atención trabajan en herramientas distintas sin una visión clara.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Equipo — Carga operativa alta</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Las personas valiosas terminan ocupadas en procesos que un sistema podría ejecutar.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Marketing — Campañas sin automatización</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Las acciones comerciales dependen demasiado de recordatorios manuales y poca medición.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide05" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">PROCESOS AUTOMATIZADOS</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Si es repetitivo se automatiza</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Conectamos tus herramientas favoritas para que el flujo de trabajo sea invisible y eficiente. Cada tarea que haces más de una vez al día es una tarea que no deberías estar haciendo tú. Diseñamos flujos inteligentes donde la información se mueve sola, las alertas llegan al momento exacto y tu equipo solo interviene cuando realmente aporta valor. No añadimos tecnología por añadir: eliminamos fricción donde duele y dejamos que tu operación respire.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-arrows-rotate"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Flujos de email automáticos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Secuencias que fortalecen prospectos desde el primer contacto hasta la compra, sin que escribas un solo mensaje manual.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-regular fa-file-zipper"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Gestión de documentos inteligente</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Facturas, contratos y reportes generados y enviados automáticamente con los datos correctos, al destinatario correcto, en el momento correcto.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-regular fa-bell"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Alertas y notificaciones inteligentes</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Tu equipo sabe qué hacer y cuándo, sin reuniones de seguimiento ni mensajes de "¿ya hiciste esto?".</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-arrows-spin"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Sincronización entre plataformas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">CRM, email, WhatsApp, calendario y contabilidad hablando entre sí. Un dato ingresado una vez, disponible en todas partes.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-chart-column"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Reportes automáticos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Paneles de control que se actualizan solos. Sabes tus números clave cada mañana sin abrir 5 herramientas diferentes.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-cloud-bolt"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Activación por eventos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Cuando pasa X, sucede Y automáticamente. Un lead califica → se agenda la reunión → se envía el contrato → se notifica al equipo.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide06" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">AGENTES DE AI</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Cerebros digitales 24/7</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Implementamos empleados virtuales inteligentes que atienden clientes, califican prospectos y cierran ventas mientras duermes.</br> No son chatbots básicos: son agentes entrenados con tu información, tu tono y tus procesos para que cada interacción se sienta humana, pero escale infinitamente.</p>
+          <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">Atención inmediata, lenguaje natural y cero errores</h2>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Chatbots para WhatsApp, web y redes</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Atiende preguntas frecuentes, filtra solicitudes y deriva conversaciones importantes.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-bullhorn"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Campañas automatizadas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Activa secuencias de email, mensajes y recordatorios según el comportamiento del cliente.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-magnifying-glass-arrow-right"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Seguimiento automático de prospectos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Registra oportunidades, clasifica prospectos y envía alertas comerciales en el momento correcto.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-regular fa-calendar-check"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Agendamiento de citas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Coordina horarios, confirma reservas y reduce ausencias con mensajes automáticos.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-chart-line"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Reportes de ventas y atención</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Obtiene indicadores claros sin depender de consolidaciones manuales al final del día.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);"><i class="fa-solid fa-link"></i></div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Integración entre herramientas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Conecta formularios, CRM, hojas de cálculo, plataformas internas y canales comerciales.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide07" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">    
+    <div style="text-align:center; margin-bottom:4rem;">      
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">WEBS DE ALTA CONVERSION</h2>
+      <div class="section-badge">De la primera impresión al sistema de crecimiento escalable</div>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Tu web no es un folleto digital. Es tu vendedor 24/7, tu filtro de calificación y tu motor de captación. Diseñamos cada nivel con una arquitectura que convierte visitantes en prospectos, prospectos en clientes, y clientes en promotores.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🎯</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Captura</div>        
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Landing Page de Alta Conversión</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Una sola página, un solo objetivo: convertir.</br>Sin distracciones, sin menús innecesarios. Cada elemento diseñado para que el visitante haga exactamente lo que necesitas: dejar sus datos, agendar una llamada o comprar. Velocidad de carga inferior a 2 segundos, copy persuasivo y formularios optimizados.</p>
+      </div>
+        <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🎨</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Experiencia</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">UX/UI Moderna y Fluida</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Tu web se siente intuitiva antes de que el usuario piense. Navegación limpia, jerarquía visual clara, microinteracciones que guían sin forzar. Diseñamos para el comportamiento real de tus usuarios, no para lo que suponemos que hacen. Compatible con todos los dispositivos, accesible y escalable.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🏗️</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Estructura</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Web Corporativa Multisector</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Más allá de una página: un ecosistema digital. Secciones de servicios, casos de éxito, blog integrado, área de clientes y funcionalidades a medida. Tu web crece con tu negocio sin reconstruir desde cero. CMS robusto que tu equipo puede gestionar sin depender de desarrolladores.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🚀</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Dominio</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Gestor de Contenido de Última Generación</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">El nivel máximo: una plataforma de contenido inteligente que aprende de tu audiencia. Personalización dinámica, SEO automatizado, análisis de comportamiento en tiempo real y generación de contenido asistida por AI. Tu web no solo muestra información: anticipa necesidades y adapta la experiencia a cada visitante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide08" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">    
+    <div style="text-align:center; margin-bottom:4rem;">      
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">APP & E-COMMERCE</h2>
+      <div class="section-badge">Llevamos negocios locales a la palma de la mano de sus clientes</div>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">Escalabilidad infinita. Tiendas online que gestionan miles de pedidos sin intervención humana manual. Desde una app estándar que pone tu negocio en el bolsillo de tus clientes, hasta una plataforma de comercio inteligente que predice demanda, optimiza precios y atiende pedidos mientras duermes.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">📲</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Presencia</div>        
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">App Estándar de Negocio</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Tu negocio, siempre a un toque. Catálogo de productos o servicios, información de contacto, horarios, ubicación y notificaciones push básicas. El punto de partida obligatorio: estar donde ya están tus clientes.</p>
+      </div>
+        <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🛒</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Transacción</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Tienda Online con Pasarela de Pagos</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">De mostrar a vender. Carrito de compras, pasarela de pagos integrada, gestión de inventario en tiempo real y confirmaciones automáticas. Tu negocio abierto 24/7, cobrando mientras descansas.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">⚙️</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Operación</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">E-Commerce con Logística Automatizada</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">Miles de pedidos, cero caos. Integración con sistemas de envío, tracking automático, gestión de stock predictiva, devoluciones inteligentes y notificaciones de estado en cada etapa. Escala sin límites operativos.</p>
+      </div>
+      <div class="benefit-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.75rem; text-align:center;">
+        <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);">🧠</div>
+        <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Inteligencia</div>
+        <h3 style="font-size:1rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">Plataforma E-Commerce con AI Integrada</h3>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); margin:0; line-height:1.6;">El nivel máximo: un cerebro comercial digital. Predicción de demanda, precios dinámicos, recomendaciones personalizadas, chatbots de venta, análisis de comportamiento de compra y campañas automáticas que se optimizan solas. Tu tienda no solo vende: aprende, adapta y maximiza cada transacción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide09" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div style="grid-column: span 1;">
+        <a href="#" style="display:inline-flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; font-weight:700; margin-bottom:1rem;">
+          <svg width="96" height="96" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <defs>
+              <linearGradient id="footer-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+              </linearGradient>
+              <linearGradient id="footer-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#footer-grad)" fill-opacity="0.12" stroke="url(#footer-grad)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#footer-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+            <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+            <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+            <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+            <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+          </svg>
+          <span style="color:var(--foreground); font-size:2.6rem; font-weight:700;">SIBET <span style="color:var(--primary);">AI</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">TU GRAN OPORTUNIDAD</h2>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">CONTAMOS CON UN SISTEMA DE AFILIADOS</h2>
+      <h2 style="font-size:clamp(1.05rem, 2.4vw, 1.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">NO NECESITAS SER PROGRAMADOR, NOSOTROS CONSTRUIMOS</h2>
+      <h2 style="font-size:clamp(1.05rem, 2.4vw, 1.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">TU NOS RECOMIENDAS</h2>
+      <div class="section-badge">sibetweb.com | ventas@sibetweb.com</div></br>
+      <a href="#oportunidad" class="btn-primary">TU OPORTUNIDAD SISTEMA DE AFLIADOS</a>
+    </div>
+  </div>
+</section>
+<section id="slide10" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">PLAN DE COMPENSACIÓN</h2>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">8% EN CADA TRANSACCIÓN DE TUS REFERIDOS</h2>
+      <div class="section-badge">Ingresos recurrentes sin inversión inicial</div>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; padding-bottom: 15px; line-height:1.7;">Ganas mientras tus referidos mantengan relación comercial con nosotros. No es una promesa de por vida: es una comisión real, pagada cada vez que tu referido pague por un proyecto, un mantenimiento o una renta mensual.</p>
+      <div class="section-badge">Mientras haya transacción, hay comisión</div>
+    </div>
+  </div>
+</section>
+<section id="slide11" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <h2 style="font-size:clamp(1.3rem, 3vw, 1.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿QUÉ RECIBES AL REGISTRARTE?</h2>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">✅</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Registro 100% gratuito</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Sin cuotas de ingreso, sin pagos mensuales obligatorios</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">✅</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Link personalizado + pack de diapositivas</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Material listo para compartir en redes, WhatsApp o presentaciones</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">✅</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Capacitación para presentaciones</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Entrenamiento gratuito para que presentes con confianza</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">✅</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Acompañamiento en cierres vía reuniones virtuales</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Te acompañamos en las reuniones con tus prospectos para cerrar juntos</p></div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <h2 style="font-size:clamp(1.3rem, 3vw, 1.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿CÓMO GANAS?</h2>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">🔄</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Escenario  Tu comisión</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">8% en el primer proyecto</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">🔄</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Cuando tu referido contrata un servicio de implementación</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">8% en cada mantenimiento</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">🔄</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Cuando renueva o paga soporte técnico</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">8% en cada plan mensual mientras pague</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div style="font-size: 1.5rem; color: var(--primary);">🔄</div>
+            <div><p style="font-weight:600; color:#fff; margin:0 0 0.25rem;">Rentas de aplicaciones, software o servicios recurrentes activos</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">8% en todo lo que adquiera hoy y mientras pague</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide12" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div style="display:flex; justify-content: center; align-items: center; height: 100%;width: 50%; padding: 1rem; box-sizing: border-box;">
+          <div style="max-width: 100%; max-height: 100%; object-fit: contain; ">
+            <img src="images/bono.png" alt="Bono">
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">BONO POR RENDIMIENTO</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">El que más vende, más gana 🏆 Premiamos tu esfuerzo</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Cada periodo reconocemos a los 2 afiliados con mayor volumen de ventas. No es un reconocimiento simbólico: es dinero extra en tu bolsillo.</br>2% adicional sobre todas tus ventas del mes.</p>
+          <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">★ Comisión total del periodo: 10%</h2>
+          <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">🏆 Distinción: Productor del Mes</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide13" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">INGRESOS RECURRENTES</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Construye activos digitales que te pagan mes tras mes</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Cada referido que traes no es una comisión única: es un activo que genera ingresos mientras mantenga relación comercial con nosotros.</br>No prometemos eternidad. Prometemos transparencia: ganas mientras haya transacciones.</p>
+          <!-- , y tu red trabaja por ti en tres niveles
+          <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">Si una o más de estas señales te son familiares, no es que necesites trabajar más. Necesitas que el sistema trabaje por ti.</h2> -->
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Mes 1 — Primeros Clientes</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Registras tu link, compartes material, cierras tus primeros 5 referidos directos en proyectos o planes mensuales.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Mes 6 — Cartera Activa</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Tus 15 referidos directos generan transacciones recurrentes. Algunos empiezan a referir: tu Nivel 2 se activa. Mantenimientos y rentas mensuales suman.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Mes 12 — Red Trabajando</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">30 directos activos, 90 en Nivel 2, red Nivel 3 empezando a producir. Múltiples fuentes de comisión convergen. Tu tiempo inicial se multiplica.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem;">            
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff; margin:0 0 0.25rem;">Futuro — Ingreso Compuesto</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Red amplia y diversificada. Nuevos referidos siguen entrando mientras los antiguos mantienen servicios. No dependes de un solo cliente ni de un solo mes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide14" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">TU SOCIO TECNOLÓGICO</h2>
+          <div style="font-size:1rem; font-weight:700; color:var(--primary); margin-bottom:0.25rem;">Nosotros construimos — Tú cierras — Tu cliente gana.</div>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Como afiliado, no necesitas saber de código ni de infraestructura. Nosotros somos tu equipo técnico invisible: desarrollamos, implementamos, soportamos y garantizamos que cada solución funcione.</p>
+          <div style="background:rgba(0,212,170,0.08); border:1px solid rgba(0,212,170,0.2); border-radius:0.75rem; padding:0.75rem;">
+            <p style="font-size:1rem; color:var(--primary); margin:0; font-weight:500;">Tú te enfocas en presentar y cerrar</br>Nosotros en entregar.</p>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.10rem;">
+          <div style="display:flex; align-items:flex-start; gap:1rem; margin:0 0 1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff;">Desarrollo Experto</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Nosotros nos encargamos del código, la ingeniería compleja y la integración entre plataformas. Tú no escribes una línea de código.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; margin:0 0 1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff;">Soporte Post-Venta</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Garantizamos que la solución funcione siempre para tu cliente. Mantenimiento, actualizaciones y resolución de incidentes incluidos.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; margin:0 0 1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff;">Acompañamiento en Cierres</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Te asistimos en reuniones virtuales con tus prospectos. Respondemos preguntas técnicas, resolvemos dudas y cerramos juntos.</p></div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:1rem; margin:0 0 1rem;">
+            <div><p style="font-weight:600; font-size:1.1rem; color:#fff;">Material de Ventas Listo</p><p style="font-size:0.875rem; color:var(--muted-foreground); margin:0;">Diapositivas, guías, textos para redes y scripts de conversación. Todo profesional, con tu marca y tu link de seguimiento.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="slide15" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿ESTÁS LISTO?</h2>
+      <h2 style="font-size:clamp(0.875rem, 2vw, 1.25rem); font-weight:700; margin:0 0 1rem; color:#fff;">NO ESPERES A QUE LA IA TE REEMPLACE, ÚNETE A QUIENES LA CONTROLAN Y MONETIZAN.</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; padding-bottom: 15px; line-height:1.7;">No vendemos un curso. No pedimos inversión inicial. Te damos un sistema probado: material de ventas listo, acompañamiento en cierres, comisiones del 8% mientras tus referidos paguen, y tres niveles para escalar. Registro gratuito. Capacitación incluida. Pagos quincenales. La única pregunta es si empiezas hoy o sigues viendo cómo otros lo hacen.</p>
+      <a href="#registro" class="btn-primary">📝 REGÍSTRATE GRATIS AHORA</a>
+      <a href="mailto:tutoreslatinos@gmail.com" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>tutoreslatinos@gmail.com</a>
+      <a href="tel: 924098028" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l2.226-2.908a.5.5 0 0 1 .7-.1l3.357 2.307a1 1 0 0 1 .23 1.355l-1.723 2.428a2 2 0 0 1-2.034.779 15.995 15.995 0 0 1-9.37-5.604 15.995 15.995 0 0 1-3.51-10.18 2 2 0 0 1 1.131-1.702l2.757-1.227a1 1 0 0 1 1.3.47l1.445 3.199a.5.5 0 0 1-.152.618l-2.57 2.062a1 1 0 0 0-.2 1.353 13.3 13.3 0 0 0 3.17 3.52"/></svg>+51 (1) 924098028</a>
+      <span style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Atención para empresas de todo el Perú</span>
+    </div>
+  </div>
+</section>
+🌐 sibetweb.com
+sibetweb.com/afiliados
+Regístrate gratis y recibe tu link en 2 minutos
+📧 sibetweb@gmail.com
+sibetweb@gmail.com
+Escríbenos para agendar tu capacitación inicial
+💬 WhatsApp
++51 924098028
+Habla directo con el equipo de afiliados
+
+<!-- ========== TESTIMONIALS ========== -->
+<!--
+<section id="testimonials" style="padding:6rem 1.5rem; background:#0a0a0a;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:4rem;">
+      <div class="section-badge">Historias de Clientes</div>
+      <h2 style="font-size:clamp(1.75rem, 4vw, 2.5rem); font-weight:700; margin:0 0 1rem; color:#fff;">Lo Que Dicen Nuestros Clientes</h2>
+      <p style="color:var(--muted-foreground); max-width:560px; margin:0 auto; line-height:1.7;">No solo tomes nuestra palabra. Mira cómo negocios como el tuyo están logrando resultados notables con nuestras soluciones de AI.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"SIBET AI transformó completamente nuestro servicio al cliente. Pasamos de gestionar 50 consultas al día a 500, con mejores tiempos de respuesta y mayores índices de satisfacción."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1534528741775-53994a69daeb.jpg" alt="Sarah Mitchell" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Sarah Mitchell</div><div style="font-size:0.75rem; color:var(--muted-foreground);">CEO, TechStart Soluciones</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Las herramientas de automatización nos ahorraron 40 horas a la semana. Redirigimos ese tiempo a estrategias de crecimiento y vimos un incremento del 300% en ingresos en 6 meses."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1507003211169-0a1dd7228f2d.jpg" alt="Michael Chen" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Michael Chen</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Fundador, E-commerce Plus</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"La analítica predictiva nos ayudó a identificar nuevas oportunidades de mercado que nunca habríamos descubierto. Nuestras tasas de conversión mejoraron un 85%."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1438761681033-6461ffad8d80.jpg" alt="Emily Rodriguez" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Emily Rodriguez</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Directora de Marketing, GrowthCo</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"La implementación fue perfecta y el ROI fue inmediato. Las soluciones de IA se pagaron solas en el primer mes solo con los ahorros en costos."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1500648767791-00dcc994a43e.jpg" alt="David Thompson" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">David Thompson</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Gerente de Operaciones, LogiFlow</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Como pequeño negocio, pensé que la IA estaba fuera de mi alcance. SIBET AI la hizo accesible y asequible. Ahora compito con empresas mucho más grandes."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1472099645785-5658abf4ff4e.jpg" alt="Lisa Park" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">Lisa Park</div><div style="font-size:0.75rem; color:var(--muted-foreground);">Propietaria de Pequeño Negocio</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.5rem; display:flex; flex-direction:column;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(0,212,170,0.3); margin-bottom:1rem;"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg>
+        <p style="font-size:0.875rem; color:var(--muted-foreground); line-height:1.7; margin:0 0 1.25rem; flex:1;">"Las funciones de seguridad nos dan tranquilidad. Podemos enfocarnos en la innovación sabiendo que nuestros datos y clientes están protegidos por IA de vanguardia."</p>
+        <div style="display:flex; gap:0.25rem; margin-bottom:1rem; color:var(--primary);">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <img src="images/photo-1438761681033-6461ffad8d80.jpg" alt="James Wilson" style="width:40px; height:40px; border-radius:50%; object-fit:cover; background:var(--muted);">
+          <div><div style="font-weight:600; font-size:0.875rem; color:#fff;">James Wilson</div><div style="font-size:0.75rem; color:var(--muted-foreground);">CTO, InnovateLab</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ========== CONTACT ========== -->
+<section id="contact" style="padding:6rem 1.5rem; background:var(--background);">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:start;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:3rem; align-items:start;">
+
+        <!-- Left column -->
+        <div>
+          <div class="section-badge">Comenzar</div>
+          <h2 style="font-size:clamp(1.75rem, 4vw, 2rem); font-weight:700; margin:0 0 1rem; color:#fff;">¿Listo para hacer crecer tu empresa con AI?</h2>
+          <p style="color:var(--muted-foreground); line-height:1.7; margin:0 0 2rem;">Implementamos asistentes virtuales, agentes de AI, automatizaciones empresariales, sistemas inteligentes, CRM, ERP y herramientas de marketing automatizado que trabajan por tu empresa las 24 horas del día.</br>Mientras tu equipo se enfoca en vender y crecer, la inteligencia artificial se encarga de las tareas repetitivas, la atención al cliente y el seguimiento de oportunidades de negocio.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.875rem;">
+            <!--
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Consultoría experta de estrategia de IA ($1,000)</li>
+            -->
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Diagnóstico y plan de mejora para tu empresa</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Sesión estratégica para identificar oportunidades de ahorro y crecimiento</li>
+            <li style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;flex-shrink:0;"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Acompañamiento durante todo el proceso de implementación</li>
+          </ul>
+          <div style="background:rgba(0,212,170,0.08); border:1px solid rgba(0,212,170,0.2); border-radius:0.75rem; padding:1rem;">
+            <p style="font-size:0.8rem; color:var(--primary); margin:0; font-weight:500;">&#9888; Reserva tu consultoría y descubre qué procesos puedes automatizar para reducir costos y mejorar resultados.</p>
+          </div>
+        </div>
+
+        <!-- Right column: Form -->
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:2rem;">
+          <h3 style="font-size:1.125rem; font-weight:700; color:#fff; margin:0 0 1.5rem;">Conversemos sobre cómo optimizar tu negocio</h3>
+          <form id="contact-form" style="display:flex; flex-direction:column; gap:1rem;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+              <input type="text" name="name" placeholder="Nombre Completo" required class="input-field">
+              <input type="email" name="email" placeholder="Correo Electrónico" required class="input-field">
+            </div>
+            <input type="text" name="company" placeholder="Nombre de la Empresa" required class="input-field">
+            <select name="size" class="input-field">
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="asesoria">Agendar una asesoría</option>
+              <option value="propuesta">Solicitar una Propuesta</option>
+              <option value="otros">Otros</option>
+            </select>
+            <textarea name="message" placeholder="¿Qué procesos te gustaría mejorar o automatizar en tu empresa?" rows="4" class="input-field" style="resize:vertical;"></textarea>
+            <button type="submit" class="btn-primary" style="width:100%; padding:0.875rem; font-size:1rem; justify-content:center;">
+              Enviar &rarr;
+            </button>
+            <p style="font-size:0.75rem; color:var(--muted-foreground); text-align:center; margin:0;">Al enviar este formulario, aceptas nuestra política de privacidad y términos de servicio.</p>
+          </form>
+          <div id="form-success" style="display:none; text-align:center; padding:3rem 1rem;">
+            <div style="font-size:3rem; color:var(--primary); margin-bottom:1rem;">&#10003;</div>
+            <h3 style="font-size:1.25rem; font-weight:600; color:#fff; margin:0 0 0.5rem;">¡Consultoría Reservada!</h3>
+            <p style="color:var(--muted-foreground); margin:0;">Nos pondremos en contacto en menos de 24 horas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer style="background:#050505; border-top:1px solid var(--border); padding:4rem 1.5rem 2rem;">
+  <div style="max-width:1280px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:3rem; margin-bottom:3rem;">
+
+      <!-- Brand -->
+      <div style="grid-column: span 1;">
+        <a href="#" style="display:inline-flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; font-weight:700; margin-bottom:1rem;">
+          <svg width="96" height="96" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <defs>
+              <linearGradient id="footer-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa"/><stop offset="1" stop-color="#4ade80"/>
+              </linearGradient>
+              <linearGradient id="footer-grad-inner" x1="20" y1="16" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4aa" stop-opacity="0.9"/><stop offset="1" stop-color="#6ee7b7" stop-opacity="0.7"/>
+              </linearGradient>
+            </defs>
+            <path d="M32 4L56 18V46L32 60L8 46V18L32 4Z" fill="url(#footer-grad)" fill-opacity="0.12" stroke="url(#footer-grad)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M22 20C22 20 30 20 34 20C38 20 42 22 42 26C42 30 38 32 34 32H30C26 32 22 34 22 38C22 42 26 44 30 44C34 44 42 44 42 44" stroke="url(#footer-grad-inner)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="22" cy="20" r="2.5" fill="#00d4aa"/>
+            <circle cx="42" cy="26" r="2.5" fill="#00d4aa"/>
+            <circle cx="22" cy="38" r="2.5" fill="#4ade80"/>
+            <circle cx="42" cy="44" r="2.5" fill="#4ade80"/>
+            <circle cx="32" cy="32" r="2" fill="#00d4aa" fill-opacity="0.6"/>
+          </svg>
+          <span style="color:var(--foreground); font-size:2.6rem; font-weight:700;">Sibet <span style="color:var(--primary);">AI</span></span>
+        </a>
+                  <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
+            <a href="mailto:tutoreslatinos@gmail.com" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>tutoreslatinos@gmail.com</a>
+            <a href="tel: 924098028" style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground); text-decoration:none;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l2.226-2.908a.5.5 0 0 1 .7-.1l3.357 2.307a1 1 0 0 1 .23 1.355l-1.723 2.428a2 2 0 0 1-2.034.779 15.995 15.995 0 0 1-9.37-5.604 15.995 15.995 0 0 1-3.51-10.18 2 2 0 0 1 1.131-1.702l2.757-1.227a1 1 0 0 1 1.3.47l1.445 3.199a.5.5 0 0 1-.152.618l-2.57 2.062a1 1 0 0 0-.2 1.353 13.3 13.3 0 0 0 3.17 3.52"/></svg>+51 (1) 924098028</a>
+            <span style="display:flex; align-items:center; font-size:0.875rem; color:var(--muted-foreground);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary);margin-right:0.75rem;"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Atención para empresas de todo el Perú</span>
+          </div>
+        <div style="display:flex; gap:0.75rem;">
+          <a href="#" aria-label="Facebook" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:2.25rem; height:2.25rem; border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted-foreground); text-decoration:none; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='var(--primary)';this.style.color='var(--primary)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted-foreground)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 1rem; font-size:0.875rem;">Servicios</h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Consultoría de Estrategia de IA</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Chatbots con IA</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Automatización Empresarial</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Analítica Predictiva</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Inteligencia de Clientes</a></li>
+          <li><a href="#services" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Optimización del Rendimiento</a></li>
+        </ul>
+      </div>
+      -->
+      <!-- Company -->
+      <!-- 
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 1rem; font-size:0.875rem;">Empresa</h4>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.625rem;">
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Nosotros</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Empleos</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Blog</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Casos de Éxito</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Prensa</a></li>
+          <li><a href="#" style="font-size:0.875rem; color:var(--muted-foreground); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Socios</a></li>
+        </ul>
+      </div>
+      -->
+
+      <!-- Newsletter -->
+      <div>
+        <h4 style="font-weight:600; color:#fff; margin:0 0 0.5rem; font-size:0.875rem;">Mantente al día con las oportunidades que la AI puede generar para tu empresa</h4>
+        <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0 0 1rem; line-height:1.6;">Recibe información práctica, tendencias y estrategias para optimizar operaciones, mejorar la experiencia del cliente y aumentar la productividad.</p>
+        <form onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:var(--primary);font-size:0.875rem;\'>¡Gracias por suscribirte!</p>';" style="display:flex; gap:0.5rem;">
+          <input type="email" placeholder="Tu correo" class="input-field" style="flex:1; padding:0.625rem 0.875rem;">
+          <button type="submit" class="btn-primary" style="padding:0.625rem 1rem; white-space:nowrap; font-size:0.8rem;">Suscribirse</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top:1px solid var(--border); padding-top:2rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+      <p style="font-size:0.8rem; color:var(--muted-foreground); margin:0;">&copy; SIBET AI © 2024 | AUTOMATIZA - VENDE - CRECE. Todos los derechos reservados.</p>
+<!--
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Política de Privacidad</a>
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Términos de Servicio</a>
+        <a href="#" style="font-size:0.8rem; color:var(--muted-foreground); text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted-foreground)'">Política de Cookies</a>
+      </div>
+    -->
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script src="js/main.js"></script>
+
+<!-- ========== CHATBASE WIDGET ========== -->
+<script>
+  window.embeddedChatbotConfig = {
+    chatbotId: "oZ45UZzhlmbvV8AvULTrO",
+    domain: "www.chatbase.co"
+  }
+</script>
+<script
+  src="https://www.chatbase.co/embed.min.js"
+  chatbotId="oZ45UZzhlmbvV8AvULTrO"
+  domain="www.chatbase.co"
+  defer>
+</script>
+
+</body>
+</html>
